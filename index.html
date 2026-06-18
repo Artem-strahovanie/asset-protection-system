@@ -744,7 +744,7 @@
         <div class="container header-wrapper">
             <div class="logo">Турков<span>.Страхование</span></div>
             <ul class="nav-menu">
-                <li><a href="#">Главная</a></li>
+                <li><a href="#hero">Главная</a></li>
                 <li><a href="#bento">Направления</a></li>
                 <li><a href="#profile">Об эксперте</a></li>
                 <li><a href="#faq">Вопросы</a></li>
@@ -759,7 +759,7 @@
 
     <div class="container">
         
-        <section class="hero-section">
+        <section class="hero-section" id="hero">
             <div class="hero-grid">
                 <div class="hero-offer">
                     <span class="section-tag">Независимый эксперт / г. Владимир</span>
@@ -978,6 +978,7 @@
     <script>
         // ЛОГИКА ПОПАПА ТЕМЫ
         function toggleThemePopup() {
+            document.getElementById('themePopup').toggleAttribute;
             document.getElementById('themePopup').classList.toggle('show');
         }
 
@@ -1048,17 +1049,17 @@
             }
         }
 
-        // КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ: ПРОВЕРКА СМАРТФОНА И РЕДИРЕКТ НА ПРАВИЛЬНЫЙ ИНТЕРФЕЙС ВК
+        // ПРОВЕРКА СМАРТФОНА И РЕДИРЕКТ НА ПРАВИЛЬНЫЙ ИНТЕРФЕЙС ВК
         function getOptimalVKLink() {
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    if (isMobile) {
-        // Железный мобильный адрес для перехода прямо в диалог внутри приложения (без ухода в ленту)
-        return "https://vk.com/write380478430"; 
-    } else {
-        // Десктопная ссылка на диалог для компьютеров
-        return "https://vk.com/im?sel=380478430";
-    }
-}
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (isMobile) {
+                // Железный мобильный адрес для перехода прямо в диалог внутри приложения (без ухода в ленту)
+                return "https://vk.com/write380478430"; 
+            } else {
+                // Десктопная ссылка на диалог для компьютеров
+                return "https://vk.com/im?sel=380478430";
+            }
+        }
 
         function copyAndOpenVK(event) {
             event.preventDefault();
