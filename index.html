@@ -1044,7 +1044,7 @@
         function copyAndOpenVK(event) {
             event.preventDefault();
             
-            const formattedText = `Здравствуйте, Артем! Я прошел аудит на вашем сайте Турков.Страхование.\nМои параметры:\n1. Направление защиты: ${userChoices.category || 'Не выбрано'}\n2. Главный приоритет: ${userChoices.priority || 'Не выбрано'}\nЖду персональный чек-лист и аудит рисков по городу Владимир.`;
+            const formattedText = `Здравствуйте, Артем! Я прошел аудит на вашем сайте Турков.Страхование.\nМои параметры:\n1. Направление защиты: ${userChoices.category || 'Не выбрано'}\n2. Главный приоритет: ${userChoices.priority || 'Не выбрано'}\nАртем, проконсультируйте по рискам по городу Владимир и в других регионах.`;
 
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(formattedText)
