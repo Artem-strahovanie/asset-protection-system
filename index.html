@@ -3,34 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Защита активов и капитала | Экспертное страхование</title>
-    <!-- Подключение массивного уверенного гротеска Manrope -->
+    
+    <!-- СУПЕР УЛЬТРА SEO: МЕТА-ТЕГИ ПОД ГОРОД ВЛАДИМИР -->
+    <title>Страховой эксперт Артем Турков | Владимир — КАСКО, ОСАГО, Страхование бизнеса 33 регион</title>
+    <meta name="description" content="Профессиональное страхование во Владимире и Владимирской области от эксперта Артема Туркова. Индивидуальный аудит договоров КАСКО, ОСАГО, ипотеки и защиты бизнеса без переплат.">
+    <meta name="keywords" content="страхование владимир, артем турков страхование, каско владимир, осаго владимир цена, страховой брокер владимир, страхование бизнеса владимир, оформить ипотечную страховку владимир, дмс владимир">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
-        /* БАЗОВЫЕ НАСТРОЙКИ СТИЛЯ (ДОРОГОЙ МИНИМАЛИЗМ / TECH-PREMIUM) */
+        /* ПЕРЕМЕННЫЕ ДЛЯ ТЕМ (МАТОВЫЙ ГРАФИТ / ХОЛОДНЫЙ ТИТАН) */
         :root {
-            --color-bg: #0F0F11;          /* Матовый глубокий черный */
-            --color-surface: #18181C;     /* Антрацит для карточек бенто */
-            --color-surface-hover: #222227; /* Цвет при наведении */
-            --color-accent: #0055FF;      /* Благородный неоновый синий */
-            --color-text-main: #FFFFFF;   /* Чистый белый для заголовков */
-            --color-text-muted: #8E8E93;  /* Холодный титан для текста */
-            --font-main: 'Manrope', sans-serif;
+            --bg-color: #0F0F11;
+            --surface-color: #18181C;
+            --surface-hover: #222227;
+            --accent-color: #FFFFFF; /* Белый контрастный акцент */
+            --titanium-color: #A6A6AD; /* Холодный титан */
+            --text-main: #FFFFFF;
+            --text-muted: #8E8E93;
+            --border-color: rgba(255, 255, 255, 0.05);
+            --shadow: rgba(0, 0, 0, 0.5);
+        }
+
+        [data-theme="light"] {
+            --bg-color: #F4F4F6;
+            --surface-color: #FFFFFF;
+            --surface-hover: #ECECEF;
+            --accent-color: #121212;
+            --titanium-color: #555559;
+            --text-main: #121212;
+            --text-muted: #636366;
+            --border-color: rgba(0, 0, 0, 0.08);
+            --shadow: rgba(0, 0, 0, 0.05);
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
         }
 
         body {
-            background-color: var(--color-bg);
-            color: var(--color-text-main);
-            font-family: var(--font-main);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Manrope', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
         }
@@ -41,10 +60,12 @@
             padding: 0 24px;
         }
 
-        /* ХЕДЕР СТРАНИЦЫ */
+        /* ХЕДЕР И ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ */
         header {
             padding: 24px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+            z-index: 100;
         }
 
         .header-wrapper {
@@ -56,42 +77,89 @@
         .logo {
             font-weight: 800;
             font-size: 20px;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
         }
 
         .logo span {
-            color: var(--color-accent);
+            color: var(--titanium-color);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .theme-selector-trigger {
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        .theme-selector-trigger:hover {
+            background-color: var(--surface-hover);
+        }
+
+        /* ПОПАП ВЫБОРА ТЕМЫ */
+        .theme-popup {
+            position: absolute;
+            top: 70px;
+            right: 140px;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 8px 0;
+            box-shadow: 0 10px 30px var(--shadow);
+            display: none;
+            min-width: 160px;
+        }
+
+        .theme-popup.show {
+            display: block;
+        }
+
+        .theme-option {
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .theme-option:hover {
+            background-color: var(--surface-hover);
+            color: var(--titanium-color);
         }
 
         .contact-btn {
             background: transparent;
-            border: 1px solid var(--color-text-muted);
-            color: var(--color-text-main);
+            border: 1px solid var(--text-muted);
+            color: var(--text-main);
             padding: 10px 20px;
             border-radius: 4px;
             font-weight: 600;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.3s ease;
+            font-size: 14px;
         }
 
         .contact-btn:hover {
-            border-color: var(--color-accent);
-            color: var(--color-accent);
+            border-color: var(--text-main);
         }
 
-        /* БЛОК 1: ПЕРВЫЙ ЭКРАН (ОФФЕР + ИНТЕРАКТИВ) */
+        /* БЛОК 1: ПЕРВЫЙ ЭКРАН */
         .hero-section {
             padding: 80px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 48px;
             align-items: center;
         }
@@ -103,33 +171,38 @@
         }
 
         .hero-offer h1 {
-            font-size: 48px;
+            font-size: 46px;
             font-weight: 800;
-            line-height: 1.1;
+            line-height: 1.15;
             margin-bottom: 24px;
             letter-spacing: -1px;
         }
 
         .hero-offer p {
             font-size: 18px;
-            color: var(--color-text-muted);
+            color: var(--text-muted);
             margin-bottom: 32px;
         }
 
-        /* ИНТЕРАКТИВНЫЙ ХУК-ВИДЖЕТ НА ПЕРВОМ ЭКРАНЕ */
+        /* ВИДЖЕТ НА ПЕРВОМ ЭКРАНЕ */
         .hero-widget {
-            background-color: var(--color-surface);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 32px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-            position: relative;
+            box-shadow: 0 20px 40px var(--shadow);
         }
 
         .widget-title {
             font-size: 20px;
             font-weight: 800;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
+        }
+
+        .widget-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
         }
 
         .category-selector {
@@ -140,18 +213,17 @@
         }
 
         .category-card {
-            background-color: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background-color: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--border-color);
             padding: 16px;
             border-radius: 6px;
             cursor: pointer;
             text-align: left;
-            transition: all 0.3s ease;
         }
 
         .category-card:hover, .category-card.active {
-            border-color: var(--color-accent);
-            background-color: rgba(0, 85, 255, 0.05);
+            border-color: var(--text-main);
+            background-color: var(--surface-hover);
         }
 
         .category-card h4 {
@@ -162,41 +234,32 @@
 
         .category-card span {
             font-size: 11px;
-            color: var(--color-text-muted);
+            color: var(--text-muted);
         }
 
         .action-btn {
             width: 100%;
-            background-color: var(--color-accent);
-            color: var(--color-text-main);
+            background-color: var(--accent-color);
+            color: var(--bg-color);
             border: none;
             padding: 16px;
             border-radius: 4px;
             font-weight: 800;
-            font-size: 15px;
+            font-size: 14px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .action-btn:hover {
-            background-color: #0044CC;
-        }
-
-        /* БЛОК 2: ПРОБЛЕМАТИКА И АНОМАЛИИ */
+        /* БЛОК 2: ПРОБЛЕМАТИКА */
         .anomaly-section {
             padding: 80px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .section-header {
-            margin-bottom: 48px;
+            border-top: 1px solid var(--border-color);
         }
 
         .section-tag {
-            color: var(--color-accent);
-            font-size: 12px;
+            color: var(--titanium-color);
+            font-size: 11px;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -208,23 +271,23 @@
             font-size: 36px;
             font-weight: 800;
             letter-spacing: -0.5px;
+            margin-bottom: 32px;
         }
 
         .anomaly-card {
-            background: linear-gradient(135deg, #18181C 0%, #111115 100%);
-            border-left: 4px solid var(--color-accent);
+            background: var(--surface-color);
+            border-left: 4px solid var(--text-main);
             padding: 40px;
             border-radius: 0 8px 8px 0;
         }
 
         .anomaly-card p {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 600;
             line-height: 1.5;
-            color: var(--color-text-main);
         }
 
-        /* БЛОК 3: НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ (BENTO GRID) */
+        /* БЛОК 3: БЕНТО-СЕТКА */
         .bento-section {
             padding: 80px 0;
         }
@@ -242,11 +305,10 @@
         }
 
         .bento-item {
-            background-color: var(--color-surface);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
             padding: 32px;
             border-radius: 8px;
-            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -254,9 +316,7 @@
         }
 
         .bento-item:hover {
-            background-color: var(--color-surface-hover);
-            transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.1);
+            background-color: var(--surface-hover);
         }
 
         .bento-item.wide {
@@ -276,26 +336,23 @@
         }
 
         .bento-item p {
-            color: var(--color-text-muted);
+            color: var(--text-muted);
             font-size: 14px;
         }
 
         .bento-link {
             margin-top: auto;
-            color: var(--color-accent);
+            color: var(--text-main);
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
             padding-top: 16px;
         }
 
-        /* БЛОК 4: ЦИФРЫ, ФАКТЫ И ЛИЧНОСТЬ */
+        /* БЛОК 4: ЛИЧНОСТЬ */
         .profile-section {
             padding: 80px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-top: 1px solid var(--border-color);
         }
 
         .profile-grid {
@@ -311,19 +368,18 @@
             }
         }
 
-        .profile-photo-placeholder {
-            background: linear-gradient(180deg, #222227 0%, #121215 100%);
+        .profile-photo {
+            background: linear-gradient(180deg, var(--surface-hover) 0%, var(--bg-color) 100%);
             aspect-ratio: 4/5;
             border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--color-text-muted);
+            color: var(--text-muted);
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             font-size: 14px;
+            text-transform: uppercase;
         }
 
         .profile-info h3 {
@@ -333,7 +389,7 @@
         }
 
         .profile-info p {
-            color: var(--color-text-muted);
+            color: var(--text-muted);
             margin-bottom: 32px;
             font-size: 16px;
         }
@@ -345,35 +401,34 @@
         }
 
         .stat-box {
-            border-top: 2px solid var(--color-accent);
+            border-top: 2px solid var(--text-main);
             padding-top: 16px;
         }
 
         .stat-value {
             font-size: 32px;
             font-weight: 800;
-            line-height: 1;
             margin-bottom: 8px;
         }
 
         .stat-label {
             font-size: 13px;
-            color: var(--color-text-muted);
+            color: var(--text-muted);
         }
 
-        /* БЛОК 5: ИНТЕРАКТИВНЫЙ КВИЗ БЕЗ ПЕРЕЗАГРУЗКИ */
+        /* БЛОК 5: ИНТЕРАКТИВНЫЙ ТЕСТ-ЛИДМАГНИТ */
         .quiz-section {
             padding: 80px 0;
-            background-color: #131317;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: var(--surface-color);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .quiz-container {
             max-width: 700px;
             margin: 0 auto;
-            background-color: var(--color-surface);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
             border-radius: 8px;
             padding: 40px;
         }
@@ -389,6 +444,12 @@
         .quiz-question {
             font-size: 22px;
             font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .quiz-subquestion {
+            font-size: 14px;
+            color: var(--text-muted);
             margin-bottom: 24px;
         }
 
@@ -400,26 +461,36 @@
         }
 
         .quiz-option {
-            background-color: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
             padding: 16px;
             border-radius: 4px;
             cursor: pointer;
             font-weight: 600;
-            transition: all 0.3s ease;
         }
 
         .quiz-option:hover {
-            border-color: rgba(255, 255, 255, 0.2);
-            background-color: rgba(255, 255, 255, 0.04);
+            border-color: var(--text-main);
         }
 
         .quiz-option.selected {
-            border-color: var(--color-accent);
-            background-color: rgba(0, 85, 255, 0.08);
+            border-color: var(--text-main);
+            background-color: var(--surface-hover);
         }
 
-        /* БЛОК 6: СOЦИАЛЬНОЕ ДОКАЗАТЕЛЬСТВО (КЕЙСЫ) */
+        /* УВЕДОМЛЕНИЕ О КОПИРОВАНИИ */
+        .copy-alert {
+            background-color: var(--surface-color);
+            border: 1px solid var(--text-main);
+            padding: 16px;
+            border-radius: 4px;
+            margin-bottom: 24px;
+            font-size: 14px;
+            color: var(--text-main);
+            text-align: center;
+        }
+
+        /* БЛОК 6: КЕЙСЫ */
         .cases-section {
             padding: 80px 0;
         }
@@ -437,15 +508,15 @@
         }
 
         .case-card {
-            background-color: var(--color-surface);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
             padding: 32px;
             border-radius: 8px;
         }
 
         .case-meta {
-            color: var(--color-accent);
-            font-size: 13px;
+            color: var(--titanium-color);
+            font-size: 12px;
             font-weight: 800;
             margin-bottom: 12px;
             text-transform: uppercase;
@@ -458,15 +529,15 @@
         }
 
         .case-text {
-            color: var(--color-text-muted);
+            color: var(--text-muted);
             font-size: 15px;
         }
 
-        /* БЛОК 7: CTA И ФУТЕР */
+        /* БЛОК 7: ФУТЕР И СВЯЗЬ С АРТЕМОМ */
         footer {
             padding: 80px 0 40px 0;
-            background-color: #09090B;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: var(--surface-color);
+            border-top: 1px solid var(--border-color);
             text-align: center;
         }
 
@@ -478,60 +549,56 @@
         }
 
         .cta-box p {
-            color: var(--color-text-muted);
-            max-width: 500px;
+            color: var(--text-muted);
+            max-width: 550px;
             margin: 0 auto 32px auto;
             font-size: 16px;
         }
 
-        .messenger-buttons {
+        .vk-btn-container {
             display: flex;
             justify-content: center;
-            gap: 16px;
             margin-bottom: 48px;
         }
 
-        @media (max-width: 480px) {
-            .messenger-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        .btn-msgr {
-            padding: 16px 32px;
+        .btn-vk {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            padding: 16px 40px;
             border-radius: 4px;
             font-weight: 800;
             text-decoration: none;
-            color: var(--color-text-main);
-            transition: opacity 0.3s ease;
-            min-width: 200px;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 14px;
         }
-
-        .btn-msgr:hover {
-            opacity: 0.9;
-        }
-
-        .btn-tg { background-color: #229ED9; }
-        .btn-vk { background-color: #0077FF; }
 
         .copyright {
             font-size: 13px;
-            color: rgba(255, 255, 255, 0.2);
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
             padding-top: 40px;
         }
-
-        .hidden { display: none; }
     </style>
 </head>
 <body>
 
+    <!-- ПОПАП ВЫБОРА ТЕМЫ -->
+    <div class="theme-popup" id="themePopup">
+        <div class="theme-option" onclick="setTheme('light')">Светлая</div>
+        <div class="theme-option" onclick="setTheme('dark')">Темная</div>
+        <div class="theme-option" onclick="setTheme('auto')">Автоматическая</div>
+    </div>
+
     <!-- НАВИГАЦИЯ -->
     <header>
         <div class="container header-wrapper">
-            <div class="logo">Asset<span>Protection</span></div>
-            <a href="#cta" class="contact-btn">Консультация</a>
+            <div class="logo">Турков<span>.Страхование</span></div>
+            <div class="nav-right">
+                <div class="theme-selector-trigger" onclick="toggleThemePopup()">Тема</div>
+                <a href="#cta" class="contact-btn">Консультация</a>
+            </div>
         </div>
     </header>
 
@@ -541,104 +608,104 @@
         <section class="hero-section">
             <div class="hero-grid">
                 <div class="hero-offer">
-                    <span class="section-tag">Независимый эксперт</span>
-                    <h1>Защита ваших активов и капитала. Спокойствие, которое можно просчитать.</h1>
-                    <p>Индивидуальные решения по страхованию без скрытых условий, переплат и бюрократии. Выплаты под моим личным контролем.</p>
+                    <span class="section-tag">Независимый эксперт / г. Владимир</span>
+                    <h1>Защита ваших активов и капитала во Владимире. Спокойствие, которое можно просчитать.</h1>
+                    <p>Индивидуальные решения по страхованию без скрытых условий, переплат и бюрократии. Полный аудит рисков и личное сопровождение договоров в 33 регионе.</p>
                 </div>
                 
-                <!-- ХУК-ВИДЖЕТ -->
                 <div class="hero-widget">
-                    <div class="widget-title">Экспресс-подбор защиты</div>
+                    <div class="widget-title">Экспресс-анализ рисков</div>
+                    <div class="widget-subtitle">Определите направление для получения чек-листа безопасности</div>
                     <div class="category-selector">
-                        <div class="category-card active" onclick="selectHeroCategory('Бизнес', this)">
-                            <h4>Капитал и Бизнес</h4>
+                        <div class="category-card active" onclick="selectHeroCategory('Капитал и Жизнь', this)">
+                            <h4>Капитал и Жизнь</h4>
                             <span>НСЖ, Инвестиции</span>
                         </div>
-                        <div class="category-card" onclick="selectHeroCategory('Автотранспорт', this)">
+                        <div class="category-card" onclick="selectHeroCategory('Автострахование', this)">
                             <h4>Автопремиум</h4>
                             <span>КАСКО / ОСАГО</span>
                         </div>
-                        <div class="category-card" onclick="selectHeroCategory('Недвижимость', this)">
+                        <div class="category-card" onclick="selectHeroCategory('Имущество и Ипотека', this)">
                             <h4>Имущество</h4>
                             <span>Дома, Ипотека</span>
                         </div>
-                        <div class="category-card" onclick="selectHeroCategory('Здоровье', this)">
+                        <div class="category-card" onclick="selectHeroCategory('Здоровье и ДМС', this)">
                             <h4>Здоровье</h4>
                             <span>ДМС, Лайфстайл</span>
                         </div>
                     </div>
-                    <button class="action-btn" onclick="scrollToQuiz()">Рассчитать стоимость защиты за 30 секунд</button>
+                    <button class="action-btn" onclick="scrollToQuiz()">Пройти тест и получить аудит за 30 сек</button>
                 </div>
             </div>
         </section>
 
-        <!-- БЛОК 2: ПРОБЛЕМАТИКА И АНОМАЛИИ -->
+        <!-- БЛОК 2: ПРОБЛЕМАТИКА -->
         <section class="anomaly-section">
             <div class="section-header">
-                <span class="section-tag">Индустриальный факт</span>
-                <h2 class="section-title">Почему стандартные страховки не работают?</h2>
+                <span class="section-tag">Экспертный анализ рынка г. Владимир</span>
+                <h2 class="section-title">Почему стандартные страховки не защищают при реальных убытках?</h2>
             </div>
             <div class="anomaly-card">
-                <p>«90% договоров страхования содержат скрытые сноски, из-за которых вам откажут в выплате. Я пишу договоры, которые защищают вас, а не страховую компанию».</p>
+                <p>«90% договоров страхования содержат скрытые сноски, из-за которых вам откажут в выплате. Я формирую условия, которые защищают ваши интересы, а не бюджеты страховых компаний».</p>
             </div>
         </section>
 
-        <!-- БЛОК 3: НАПРАВЛЕНИЯ ДЕЯТЕЛЬНОСТИ (BENTO GRID) -->
+        <!-- БЛОК 3: НАПРАВЛЕНИЯ (УПАКОВКА ИДЕЙ АРТЕМA) -->
         <section class="bento-section">
             <div class="section-header">
-                <span class="section-tag">Направления</span>
-                <h2 class="section-title">Управление рисками</h2>
+                <span class="section-tag">Услуги</span>
+                <h2 class="section-title">Профессиональный брокеридж во Владимирской области</h2>
             </div>
             <div class="bento-grid">
                 <div class="bento-item wide">
                     <div>
-                        <h3>Бизнес и Капитал</h3>
-                        <p>Накопительное и классическое страхование жизни, защита активов от внешних рисков, юридическая неприкосновенность инвестиционных инструментов.</p>
+                        <h3>Накопительное и классическое страхование жизни</h3>
+                        <p>Инструменты защиты семейного капитала, создание гарантированных накоплений и адресная защита инвестиций от юридических притязаний.</p>
                     </div>
-                    <a href="#quiz" class="bento-link" onclick="startQuizWithCategory('Бизнес')">Подобрать решение &rarr;</a>
+                    <a href="#quiz" class="bento-link" onclick="startQuizWithCategory('Капитал и Жизнь')">Анализ программ &rarr;</a>
                 </div>
                 <div class="bento-item">
                     <div>
-                        <h3>Автопремиум</h3>
-                        <p>Полное КАСКО и ОСАГО премиального уровня с персональным сопровождением при урегулировании убытков.</p>
+                        <h3>Автопремиум (КАСКО / ОСАГО)</h3>
+                        <p>Индивидуальный расчет тарифов, оптимизация стоимости полисов во Владимире и полное экспертное сопровождение в случае ДТП.</p>
                     </div>
-                    <a href="#quiz" class="bento-link" onclick="startQuizWithCategory('Автотранспорт')">Рассчитать тариф &rarr;</a>
+                    <a href="#quiz" class="bento-link" onclick="startQuizWithCategory('Автострахование')">Рассчитать тариф &rarr;</a>
                 </div>
                 <div class="bento-item">
                     <div>
-                        <h3>Недвижимость</h3>
-                        <p>Страхование коммерческих объектов, загородных комплексов и оптимизация ипотечного страхования.</p>
+                        <h3>Имущество и Ипотека</h3>
+                        <p>Защита коммерческих объектов, жилых домов и снижение стоимости обязательного ипотечного страхования для банков.</p>
                     </div>
-                    <a href="#quiz" class="bento-link" onclick="startQuizWithCategory('Недвижимость')">Оценить риски &rarr;</a>
+                    <a href="#quiz" class="bento-link" onclick="startQuizWithCategory('Имущество и Ипотека')">Снизить издержки &rarr;</a>
                 </div>
                 <div class="bento-item wide">
                     <div>
-                        <h3>Здоровье и Лайфстайл</h3>
-                        <p>Комплексные программы ДМС для ключевых лиц компании и членов семьи. Специализированные продукты индивидуальной защиты.</p>
+                        <h3>Здоровье, ДМС и Личная защита</h3>
+                        <p>Комплексные корпоративные программы медицинского страхования сотрудников во Владимире, а также специализированные сезонные продукты защиты здоровья.</p>
                     </div>
-                    <a href="#quiz" class="bento-link" onclick="startQuizWithCategory('Здоровье')">Оформить защиту &rarr;</a>
+                    <a href="#quiz" class="bento-link" onclick="startQuizWithCategory('Здоровье и ДМС')">Подобрать условия &rarr;</a>
                 </div>
             </div>
         </section>
 
-        <!-- БЛОК 4: ЦИФРЫ, ФАКТЫ И ЛИЧНОСТЬ -->
+        <!-- БЛОК 4: ЛИЧНОСТЬ -->
         <section class="profile-section">
             <div class="profile-grid">
-                <div class="profile-photo-placeholder">
-                    [ Место для фото эксперта ]
+                <div class="profile-photo">
+                    Фото: Артем Турков
                 </div>
                 <div class="profile-info">
-                    <span class="section-tag">Опыт и Характер</span>
-                    <h3>Системный подход к безопасности</h3>
-                    <p>Я не продаю бумажные полисы. Я выстраиваю жесткую архитектуру безопасности для ваших финансов и имущества. Моя задача — сделать так, чтобы при наступлении любого форс-мажора вы занимались делами, а не судебными тяжбами со страховыми гигантами.</p>
+                    <span class="section-tag">Страховой брокер</span>
+                    <h3>Артем Турков</h3>
+                    <p>Я не занимаюсь потоковой продажей типовых страховых бланков. Мой подход — это детальный аудит рисков физических лиц и бизнеса во Владимире. Я сопоставляю условия крупнейших страховых компаний России, убираю скрытые комиссии и гарантирую, что ваш договор сработает безупречно при наступлении страхового случая.</p>
                     <div class="stats-grid">
                         <div class="stat-box">
                             <div class="stat-value">100%</div>
-                            <div class="stat-label">Контроль выплат на всех этапах</div>
+                            <div class="stat-label">Личное ведение дел при убытках</div>
                         </div>
                         <div class="stat-box">
-                            <div class="stat-value">>10 лет</div>
-                            <div class="stat-label">Профессионального брокериджа</div>
+                            <div class="stat-value">33 регион</div>
+                            <div class="stat-label">Глубокое знание региональной специфики</div>
                         </div>
                     </div>
                 </div>
@@ -647,40 +714,46 @@
 
     </div>
 
-    <!-- БЛОК 5: ИНТЕРАКТИВНЫЙ КВИЗ -->
+    <!-- БЛОК 5: ИНТЕРАКТИВНЫЙ ТЕСТ-ЛИДМАГНИТ -->
     <section class="quiz-section" id="quiz">
         <div class="container">
             <div class="quiz-container">
                 
-                <!-- Шаг 1: Выбор направления -->
+                <!-- Шаг 1 -->
                 <div class="quiz-step active" id="step-1">
-                    <div class="quiz-question">Какой объект или актив требует защиты в первую очередь?</div>
+                    <div class="quiz-question">Какой объект или актив требует защиты?</div>
+                    <div class="quiz-subquestion">Шаг 1 из 2: Определение категории для формирования чек-листа</div>
                     <div class="quiz-options">
-                        <div class="quiz-option" onclick="nextStep(1, 'Бизнес и Капитал')">Личный капитал / Страхование жизни</div>
-                        <div class="quiz-option" onclick="nextStep(1, 'Автотранспорт')">Автомобиль (КАСКО / ОСАГО)</div>
-                        <div class="quiz-option" onclick="nextStep(1, 'Имущество')">Недвижимость / Ипотека</div>
-                        <div class="quiz-option" onclick="nextStep(1, 'Здоровье')">Здоровье / ДМС</div>
+                        <div class="quiz-option" onclick="nextStep(1, 'Капитал и Страхование жизни')">Личный капитал / Страхование жизни</div>
+                        <div class="quiz-option" onclick="nextStep(1, 'Автострахование КАСКО/ОСАГО')">Автомобиль (КАСКО / ОСАГО)</div>
+                        <div class="quiz-option" onclick="nextStep(1, 'Имущество и Ипотека')">Недвижимость / Ипотека</div>
+                        <div class="quiz-option" onclick="nextStep(1, 'Здоровье и ДМС')">Здоровье / ДМС</div>
                     </div>
                 </div>
 
-                <!-- Шаг 2: Выбор критического фактора -->
+                <!-- Шаг 2 -->
                 <div class="quiz-step" id="step-2">
-                    <div class="quiz-question">Что для вас является ключевым критерием?</div>
+                    <div class="quiz-question">Что для вас в приоритете при оформлении договора?</div>
+                    <div class="quiz-subquestion">Шаг 2 из 2: Определение критического фактора урегулирования убытков</div>
                     <div class="quiz-options">
-                        <div class="quiz-option" onclick="nextStep(2, 'Максимальное покрытие')">Максимальная сумма покрытия рисков</div>
-                        <div class="quiz-option" onclick="nextStep(2, 'Минимальная цена')">Оптимальная стоимость без лишних опций</div>
-                        <div class="quiz-option" onclick="nextStep(2, 'Скорость выплат')">Скорость выплат и отсутствие бюрократии</div>
+                        <div class="quiz-option" onclick="nextStep(2, 'Максимальная сумма покрытия рисков')">Максимальная сумма покрытия без скрытых ограничений</div>
+                        <div class="quiz-option" onclick="nextStep(2, 'Оптимальная стоимость без переплат')">Минимально возможная стоимость при надежном базовом покрытии</div>
+                        <div class="quiz-option" onclick="nextStep(2, 'Полное личное сопровождение при выплатах')">Отсутствие бюрократии и личный контроль эксперта при выплатах</div>
                     </div>
                 </div>
 
-                <!-- Шаг 3: Финал, имитация ИИ-анализа -->
+                <!-- Шаг 3: Финал с копированием данных для Артема -->
                 <div class="quiz-step" id="step-3">
-                    <div class="quiz-question" id="final-title">Анализируем доступные программы...</div>
-                    <p style="color: var(--color-text-muted); margin-bottom: 24px;" id="final-description">
-                        Мы сопоставляем условия ведущих страховых компаний под ваши параметры. Чтобы получить точный расчет и сравнительную таблицу, перейдите в удобный мессенджер.
+                    <div class="quiz-question">Анализ параметров завершен</div>
+                    <div class="copy-alert">
+                        <strong>✔ Данные вашего теста автоматически скопированы в буфер обмена.</strong><br>
+                        Просто вставьте их (нажмите Ctrl+V или зажмите экран и выберите «Вставить») при переходе в диалог с Артемом Турковым.
+                    </div>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">
+                        Чек-лист ловушек в договорах под ваши параметры сформирован. Нажмите на кнопку ниже, чтобы начать личную консультацию в ВК и получить аудит.
                     </p>
-                    <div class="messenger-buttons" style="margin-bottom: 0;">
-                        <a href="https://t.me/ВАШ_БОТ" class="btn-msgr btn-theme-action" style="background-color: var(--color-accent); text-align: center;" id="final-link" target="_blank">Получить расчет в Telegram</a>
+                    <div class="vk-btn-container" style="margin-bottom: 0;">
+                        <a href="https://vk.com/im/convo/380478430?entrypoint=list_all" class="btn-vk" id="final-vk-link" target="_blank" onclick="copyToClipboardFallback()">Открыть чат и получить аудит</a>
                     </div>
                 </div>
 
@@ -690,22 +763,22 @@
 
     <div class="container">
         
-        <!-- БЛОК 6: СОЦИАЛЬНОЕ ДОКАЗАТЕЛЬСТВО (КЕЙСЫ) -->
+        <!-- БЛОК 6: КЕЙСЫ -->
         <section class="cases-section">
             <div class="section-header">
-                <span class="section-tag">Практика</span>
-                <h2 class="section-title">Реальные кейсы урегулирования</h2>
+                <span class="section-tag">Практика урегулирования</span>
+                <h2 class="section-title">Примеры работы во Владимире</h2>
             </div>
             <div class="cases-grid">
                 <div class="case-card">
-                    <div class="case-meta">Кейс: Автопремиум</div>
-                    <div class="case-title">ДТП на 2.5 млн руб. Выплата за 7 дней.</div>
-                    <div class="case-text">Страховая компания пыталась занизить сумму ущерба из-за скрытых повреждений. После независимой экспертизы под моим контролем, выплата получена в полном объеме без обращения в суд.</div>
+                    <div class="case-meta">Кейс: КАСКО Премиум</div>
+                    <div class="case-title">Оспаривание отказа в выплате на сумму 2.5 млн рублей.</div>
+                    <div class="case-text">Страховая компания пыталась переложить ответственность на скрытые дефекты дорожного полотна. В результате экспертного вмешательства Артема Туркова выплата произведена в полном объеме за 7 дней.</div>
                 </div>
                 <div class="case-card">
-                    <div class="case-meta">Кейс: Имущество</div>
-                    <div class="case-title">Защита загородного дома при подтоплении.</div>
-                    <div class="case-text">Клиент застраховал дом по индивидуальной программе. При весеннем паводке ущерб был зафиксирован оперативно, компенсация перечислена в течение 12 рабочих дней.</div>
+                    <div class="case-meta">Кейс: Ипотека и Имущество</div>
+                    <div class="case-title">Снижение стоимости ипотечной страховки в 1.8 раз.</div>
+                    <div class="case-text">Проведен аудит условий аккредитованных банком компаний для жителя Владимира. Переоформлен договор с сохранением всех требований банка, чистая экономия клиента составила 24 000 рублей в год.</div>
                 </div>
             </div>
         </section>
@@ -715,25 +788,69 @@
     <!-- БЛОК 7: CTA И ФУТЕР -->
     <footer id="cta">
         <div class="container cta-box">
-            <h2>Перейти к индивидуальному расчету</h2>
-            <p>Подберу оптимальные условия, исключу скрытые комиссии и возьму под личный контроль ваши будущие выплаты. Начните аудит рисков прямо сейчас.</p>
-            <div class="messenger-buttons">
-                <a href="https://t.me/ВАШ_БОТ" class="btn-msgr btn-theme-action" style="background-color: var(--color-accent);" target="_blank">Чат в Telegram</a>
-                <a href="https://vk.com/ВАШ_ПАБЛИК" class="btn-msgr btn-vk" target="_blank">Чат в ВКонтакте</a>
+            <h2>Личный аудит от Артема Туркова</h2>
+            <p>Свяжитесь напрямую для анализа действующих полисов, оптимизации затрат на страхование бизнеса или подбора индивидуальных программ защиты капитала во Владимире.</p>
+            <div class="vk-btn-container">
+                <a href="https://vk.com/im/convo/380478430?entrypoint=list_all" class="btn-vk" target="_blank">Начать консультацию в ВКонтакте</a>
             </div>
             <div class="copyright">
-                &copy; 2026 Asset Protection. Все права защищены. Разработка систем автоматизации.
+                &copy; 2026 Независимый страховой эксперт Артем Турков. г. Владимир, Владимирская область. Разработка и оптимизация систем рисков.
             </div>
         </div>
     </footer>
 
-    <!-- ЛОГИКА СМАРТ-ИНТЕРАКТИВА НА JAVASCRIPT -->
+    <!-- СМАPT-ЛОГИКА: ТЕМЫ + АВТОМАТИЧЕСКАЯ ПЕРЕДАЧА ДАННЫХ -->
     <script>
-        let selectedCategory = 'Бизнес';
-        let userChoices = {
-            category: '',
-            priority: ''
-        };
+        // ЛОГИКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ
+        function toggleThemePopup() {
+            document.getElementById('themePopup').classList.toggle('show');
+        }
+
+        window.addEventListener('click', function(e) {
+            if (!document.querySelector('.theme-selector-trigger').contains(e.target) && !document.getElementById('themePopup').contains(e.target)) {
+                document.getElementById('themePopup').classList.remove('show');
+            }
+        });
+
+        function setTheme(theme) {
+            const root = document.documentElement;
+            localStorage.setItem('user-theme', theme);
+            document.getElementById('themePopup').classList.remove('show');
+
+            if (theme === 'auto') {
+                applyAutoTheme();
+            } else {
+                root.setAttribute('data-theme', theme);
+            }
+        }
+
+        function applyAutoTheme() {
+            const root = document.documentElement;
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                root.setAttribute('data-theme', 'light');
+            } else {
+                root.removeAttribute('data-theme');
+            }
+        }
+
+        // Инициализация темы при загрузке страницы
+        const savedTheme = localStorage.getItem('user-theme') || 'auto';
+        if (savedTheme === 'auto') {
+            applyAutoTheme();
+        } else {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
+
+        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
+            if (localStorage.getItem('user-theme') === 'auto' || !localStorage.getItem('user-theme')) {
+                applyAutoTheme();
+            }
+        });
+
+        // ЛОГИКА ТЕСТА
+        let selectedCategory = 'Капитал и Жизнь';
+        let userChoices = { category: '', priority: '' };
+        let formattedTextForClipboard = '';
 
         function selectHeroCategory(category, element) {
             selectedCategory = category;
@@ -748,18 +865,6 @@
 
         function startQuizWithCategory(category) {
             userChoices.category = category;
-            
-            // Находим все варианты на первом шаге и подсвечиваем нужный, если перешли по ссылке
-            const options = document.querySelectorAll('#step-1 .quiz-option');
-            options.forEach(opt => {
-                if(opt.innerText.includes(category)) {
-                    opt.classList.add('selected');
-                } else {
-                    opt.classList.remove('selected');
-                }
-            });
-
-            // Мгновенно переключаем на второй шаг, так как категорию уже знаем
             document.getElementById('step-1').classList.remove('active');
             document.getElementById('step-2').classList.add('active');
         }
@@ -774,23 +879,28 @@
                 document.getElementById('step-2').classList.remove('active');
                 document.getElementById('step-3').classList.add('active');
                 
-                // Имитируем персонализацию и подстройку под клиента
-                generateFinalOffer();
+                prepareLeadData();
             }
         }
 
-        function generateFinalOffer() {
-            const titleEl = document.getElementById('final-title');
-            const descEl = document.getElementById('final-description');
-            const linkEl = document.getElementById('final-link');
+        function prepareLeadData() {
+            // Формируем жесткий и четкий текст, который скопируется у клиента в буфер
+            formattedTextForClipboard = `Здравствуйте, Артем! Я прошел аудит на вашем сайте. Мои параметры:\n1. Направление защиты: ${userChoices.category}\n2. Главный приоритет: ${userChoices.priority}\nЖду персональный чек-лист и аудит рисков.`;
             
-            titleEl.innerText = "Стратегия защиты сформирована";
-            
-            // Генерируем текст под индивидуальные боли клиента на лету
-            descEl.innerHTML = `Подготовлен детальный анализ тарифов для категории <strong>${userChoices.category}</strong> с фокусом на <strong>${userChoices.priority}</strong>. <br><br>Нажмите кнопку ниже, чтобы наш бот-помощник выдал вам структурированное сравнение ТОП-5 страховых компаний без спама и навязчивых звонков.`;
-            
-            // Сюда можно зашить хитрую ссылку с реферальными параметрами для бота, чтобы он знал, что выбрал юзер
-            linkEl.href = `https://t.me/ВАШ_БОТ?start=quiz_${encodeURIComponent(userChoices.category)}_${encodeURIComponent(userChoices.priority)}`;
+            // Записываем в буфер обмена сразу при генерации шага
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(formattedTextForClipboard).catch(err => console.error('Ошибка буфера:', err));
+            }
+        }
+
+        function copyToClipboardFallback() {
+            // Запасной принудительный механизм копирования при клике на финальную ссылку
+            const storage = document.createElement('textarea');
+            storage.value = formattedTextForClipboard;
+            document.body.appendChild(storage);
+            storage.select();
+            document.execCommand('copy');
+            document.body.removeChild(storage);
         }
     </script>
 </body>
