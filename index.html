@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- СУПЕР УЛЬТРА SEO: МЕТА-ТЕГИ ПОД ГОРОД ВЛАДИМИР -->
-    <title>Страховой эксперт Артем Турков | Владимир — КАСКО, ОСАГО, Страхование бизнеса 33 регион</title>
+    <title>Страховой эксперт Артем Турков | Vladimir — КАСКО, ОСАГО, Страхование бизнеса 33 регион</title>
     <meta name="description" content="Профессиональное страхование во Владимире и Владимирской области от эксперта Артема Туркова. Индивидуальный аудит договоров КАСКО, ОСАГО, ипотеки и защиты бизнеса без переплат.">
     <meta name="keywords" content="страхование владимир, артем турков страхование, каско владимир, осаго владимир цена, страховой брокер владимир, страхование бизнеса владимир, оформить ипотечную страховку владимир, дмс владимир">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2 family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
         /* УЛЬТРА СОВРЕМЕННАЯ ПАЛИТРА (ГРАФИТ + МЕДНЫЙ ЯНТАРЬ) */
@@ -385,7 +384,7 @@
             padding-top: 12px;
         }
 
-        /* БЛОК 4: ЛИЧНОСТЬ */
+        /* БЛОК 4: ЛИЧНОСТЬ (ВШИТ ФАЙЛ С ФОТОГРАФИЕЙ) */
         .profile-section {
             padding: 60px 0;
             border-top: 1px solid var(--border-color);
@@ -415,6 +414,13 @@
             color: var(--text-muted);
             font-weight: 600;
             font-size: 13px;
+            overflow: hidden;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .profile-info h3 {
@@ -720,14 +726,12 @@
 </head>
 <body>
 
-    <!-- ПОПАП ВЫБОРА ТЕМЫ -->
     <div class="theme-popup" id="themePopup">
         <div class="theme-option" onclick="setTheme('light')">Светлая</div>
         <div class="theme-option" onclick="setTheme('dark')">Темная</div>
         <div class="theme-option" onclick="setTheme('auto')">Автоматическая</div>
     </div>
 
-    <!-- НАВИГАЦИЯ СТЕКЛО (ГОРИЗОНТАЛЬНАЯ КАК У АРСИ) -->
     <header>
         <div class="container header-wrapper">
             <div class="logo">Турков<span>.Страхование</span></div>
@@ -747,7 +751,6 @@
 
     <div class="container">
         
-        <!-- БЛОК 1: ПЕРВЫЙ ЭКРАН -->
         <section class="hero-section">
             <div class="hero-grid">
                 <div class="hero-offer">
@@ -782,7 +785,6 @@
             </div>
         </section>
 
-        <!-- БЛОК 2: ПРОБЛЕМАТИКА -->
         <section class="anomaly-section">
             <div class="section-header">
                 <span class="section-tag">Экспертный анализ рынка г. Владимир</span>
@@ -793,7 +795,6 @@
             </div>
         </section>
 
-        <!-- БЛОК 3: НАПРАВЛЕНИЯ -->
         <section class="bento-section" id="bento">
             <div class="section-header">
                 <span class="section-tag">Услуги</span>
@@ -803,7 +804,7 @@
                 <div class="bento-item wide">
                     <div>
                         <h3>Накопительное и классическое страхование жизни</h3>
-                        <p>Инструменты защиты семейного капитала, создание гарантированных накоплений и адресная защита инвестиций от юридических притязаний.</p>
+                        <p>Инструменты защиты семейного капитала, creation гарантированных накоплений и адресная защита инвестиций от юридических притязаний.</p>
                     </div>
                     <a href="#quiz" class="bento-link" onclick="startQuizWithCategory('Капитал и Жизнь')">Анализ программ &rarr;</a>
                 </div>
@@ -831,11 +832,10 @@
             </div>
         </section>
 
-        <!-- БЛОК 4: ЛИЧНОСТЬ -->
         <section class="profile-section" id="profile">
             <div class="profile-grid">
                 <div class="profile-photo">
-                    Фото: Артем Турков
+                    <img src="artem-turkov.jpg" alt="Страховой эксперт Артем Турков">
                 </div>
                 <div class="profile-info">
                     <span class="section-tag">Страховой брокер</span>
@@ -857,24 +857,21 @@
 
     </div>
 
-    <!-- БЛОК 5: ИНТЕРАКТИВНЫЙ ТЕСТ-ЛИДМАГНИТ -->
     <section class="quiz-section" id="quiz">
         <div class="container">
             <div class="quiz-container">
                 
-                <!-- Шаг 1 -->
                 <div class="quiz-step active" id="step-1">
                     <div class="quiz-question">Какой объект или актив требует защиты?</div>
                     <div class="quiz-subquestion">Шаг 1 из 2: Определение категории для формирования чек-листа</div>
                     <div class="quiz-options">
                         <div class="quiz-option" onclick="nextStep(1, 'Капитал и Страхование жизни')">Личный капитал / Страхование жизни</div>
-                        <div class="quiz-option" onclick="nextStep(1, 'Автострахование КАСКО/ОСАГО')">Автомобиль (КАСКО / ОСАГО)</div>
+                        <div class="quiz-option" onclick="nextStep(1, 'Автострахование КАСКО/ОСАГО')">Automobile (КАСКО / ОСАГО)</div>
                         <div class="quiz-option" onclick="nextStep(1, 'Имущество и Ипотека')">Недвижимость / Ипотека</div>
                         <div class="quiz-option" onclick="nextStep(1, 'Здоровье и ДМС')">Здоровье / ДМС</div>
                     </div>
                 </div>
 
-                <!-- Шаг 2 -->
                 <div class="quiz-step" id="step-2">
                     <div class="quiz-question">Что для вас в приоритете при оформлении договора?</div>
                     <div class="quiz-subquestion">Шаг 2 из 2: Определение критического фактора урегулирования убытков</div>
@@ -885,7 +882,6 @@
                     </div>
                 </div>
 
-                <!-- Шаг 3: Финал (Копирование при клике на саму кнопку) -->
                 <div class="quiz-step" id="step-3">
                     <div class="quiz-question">Анализ параметров завершен</div>
                     <div class="copy-alert" id="copyAlertText">
@@ -903,7 +899,6 @@
         </div>
     </section>
 
-    <!-- БЛОК: FAQ (ИНТЕРАКТИВНЫЕ ОТВЕТЫ НА ВОПРОСЫ) -->
     <section class="faq-section" id="faq">
         <div class="container">
             <div class="section-header" style="text-align: center; margin-bottom: 40px;">
@@ -935,7 +930,6 @@
 
     <div class="container">
         
-        <!-- БЛОК 6: КЕЙСЫ -->
         <section class="cases-section">
             <div class="cases-grid">
                 <div class="case-card">
@@ -953,7 +947,6 @@
 
     </div>
 
-    <!-- БЛОК 7: CTA И ФУТЕР -->
     <footer id="cta">
         <div class="container cta-box">
             <h2>Личный аудит от Артема Туркова</h2>
@@ -967,7 +960,6 @@
         </div>
     </footer>
 
-    <!-- ПЛАШКА КУКИ (COOKIE BANNER КАК НА СКРИНШОТЕ) -->
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-text">
             Для улучшения работы сайта и его взаимодействия с пользователями мы используем файлы cookie. Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.
@@ -975,7 +967,6 @@
         <button class="cookie-btn" onclick="acceptCookies()">Принять</button>
     </div>
 
-    <!-- СМАPT-ЛОГИКА -->
     <script>
         // ЛОГИКА ПОПАПА ТЕМЫ
         function toggleThemePopup() {
@@ -1055,7 +1046,6 @@
             
             const formattedText = `Здравствуйте, Артем! Я прошел аудит на вашем сайте Турков.Страхование.\nМои параметры:\n1. Направление защиты: ${userChoices.category || 'Не выбрано'}\n2. Главный приоритет: ${userChoices.priority || 'Не выбрано'}\nЖду персональный чек-лист и аудит рисков по городу Владимир.`;
 
-            // Попытка №1: Современный API
             if (navigator.clipboard && navigator.clipboard.writeText) {
                 navigator.clipboard.writeText(formattedText)
                     .then(() => proceedToVK())
@@ -1068,7 +1058,7 @@
         function fallbackCopy(text) {
             const textArea = document.createElement('textarea');
             textArea.value = text;
-            textArea.style.position = 'fixed'; // Избегаем прокрутки
+            textArea.style.position = 'fixed';
             document.body.appendChild(textArea);
             textArea.select();
             try {
