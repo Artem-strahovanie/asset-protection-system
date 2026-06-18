@@ -11,31 +11,33 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2 family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
-        /* ПЕРЕМЕННЫЕ ДЛЯ ТЕМ (МАТОВЫЙ ГРАФИТ / ХОЛОДНЫЙ ТИТАН) */
+        /* УЛЬТРА СОВРЕМЕННАЯ ПАЛИТРА (ГРАФИТ + МЕДНЫЙ ЯНТАРЬ) */
         :root {
-            --bg-color: #0F0F11;
-            --surface-color: #18181C;
-            --surface-hover: #222227;
-            --accent-color: #FFFFFF; /* Белый контрастный акцент */
-            --titanium-color: #A6A6AD; /* Холодный титан */
-            --text-main: #FFFFFF;
-            --text-muted: #8E8E93;
-            --border-color: rgba(255, 255, 255, 0.05);
-            --shadow: rgba(0, 0, 0, 0.5);
+            --bg-color: #0B0B0D;
+            --surface-color: #131317;
+            --surface-hover: #1C1C22;
+            --accent-color: #FF6A00;       /* Премиальный медный янтарный */
+            --accent-hover: #E57C23;       /* Темный медный */
+            --text-main: #F5F5F7;
+            --text-muted: #929297;
+            --border-color: rgba(255, 106, 0, 0.1);
+            --header-bg: rgba(11, 11, 13, 0.75);
+            --shadow: rgba(0, 0, 0, 0.6);
         }
 
         [data-theme="light"] {
-            --bg-color: #F4F4F6;
+            --bg-color: #F8F9FA;
             --surface-color: #FFFFFF;
-            --surface-hover: #ECECEF;
-            --accent-color: #121212;
-            --titanium-color: #555559;
-            --text-main: #121212;
-            --text-muted: #636366;
-            --border-color: rgba(0, 0, 0, 0.08);
+            --surface-hover: #F1F3F5;
+            --accent-color: #E57C23;
+            --accent-hover: #D46A12;
+            --text-main: #1D1D1F;
+            --text-muted: #6E6E73;
+            --border-color: rgba(229, 124, 35, 0.15);
+            --header-bg: rgba(248, 249, 250, 0.8);
             --shadow: rgba(0, 0, 0, 0.05);
         }
 
@@ -43,7 +45,11 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -60,63 +66,106 @@
             padding: 0 24px;
         }
 
-        /* ХЕДЕР И ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ */
+        /* ШАПКА СТЕКЛО (STICKY GLASSMORPHISM) С ГОРИЗОНТАЛЬНЫМ МЕНЮ */
         header {
-            padding: 24px 0;
+            position: sticky;
+            top: 0;
+            background: var(--header-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-color);
-            position: relative;
-            z-index: 100;
+            z-index: 1000;
+            padding: 16px 0;
         }
 
         .header-wrapper {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
         }
 
         .logo {
             font-weight: 800;
-            font-size: 20px;
+            font-size: 18px;
             letter-spacing: 0.5px;
             text-transform: uppercase;
+            white-space: nowrap;
         }
 
         .logo span {
-            color: var(--titanium-color);
+            color: var(--accent-color);
+        }
+
+        /* Навигация в стиле АРСИ */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-color);
         }
 
         .nav-right {
             display: flex;
             align-items: center;
-            gap: 24px;
+            gap: 16px;
         }
 
         .theme-selector-trigger {
             font-weight: 800;
-            font-size: 13px;
-            letter-spacing: 1px;
+            font-size: 12px;
+            letter-spacing: 0.5px;
             cursor: pointer;
             text-transform: uppercase;
-            padding: 8px 12px;
+            padding: 6px 10px;
+            border: 1px solid var(--border-color);
             border-radius: 4px;
         }
 
-        .theme-selector-trigger:hover {
-            background-color: var(--surface-hover);
+        /* АДАПТАЦИЯ ШАПКИ ПОД СМАРТФОН */
+        @media (max-width: 768px) {
+            .header-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .nav-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .nav-menu {
+                width: 100%;
+                overflow-x: auto;
+                padding-bottom: 4px;
+                gap: 16px;
+            }
         }
 
         /* ПОПАП ВЫБОРА ТЕМЫ */
         .theme-popup {
             position: absolute;
-            top: 70px;
-            right: 140px;
+            top: 65px;
+            right: 24px;
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: 6px;
-            padding: 8px 0;
+            padding: 6px 0;
             box-shadow: 0 10px 30px var(--shadow);
             display: none;
-            min-width: 160px;
+            min-width: 150px;
+            z-index: 1100;
         }
 
         .theme-popup.show {
@@ -124,43 +173,26 @@
         }
 
         .theme-option {
-            padding: 10px 20px;
-            font-size: 14px;
+            padding: 8px 16px;
+            font-size: 13px;
             font-weight: 600;
             cursor: pointer;
-            text-align: left;
         }
 
         .theme-option:hover {
             background-color: var(--surface-hover);
-            color: var(--titanium-color);
-        }
-
-        .contact-btn {
-            background: transparent;
-            border: 1px solid var(--text-muted);
-            color: var(--text-main);
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .contact-btn:hover {
-            border-color: var(--text-main);
+            color: var(--accent-color);
         }
 
         /* БЛОК 1: ПЕРВЫЙ ЭКРАН */
         .hero-section {
-            padding: 80px 0;
+            padding: 60px 0;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 48px;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 40px;
             align-items: center;
         }
 
@@ -171,17 +203,27 @@
         }
 
         .hero-offer h1 {
-            font-size: 46px;
+            font-size: 42px;
             font-weight: 800;
             line-height: 1.15;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             letter-spacing: -1px;
         }
 
         .hero-offer p {
-            font-size: 18px;
+            font-size: 17px;
             color: var(--text-muted);
-            margin-bottom: 32px;
+            margin-bottom: 28px;
+        }
+
+        .section-tag {
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            display: block;
         }
 
         /* ВИДЖЕТ НА ПЕРВОМ ЭКРАНЕ */
@@ -189,47 +231,46 @@
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 32px;
+            padding: 28px;
             box-shadow: 0 20px 40px var(--shadow);
         }
 
         .widget-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .widget-subtitle {
             font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .category-selector {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 24px;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
         .category-card {
             background-color: rgba(255, 255, 255, 0.01);
             border: 1px solid var(--border-color);
-            padding: 16px;
+            padding: 14px;
             border-radius: 6px;
             cursor: pointer;
-            text-align: left;
         }
 
         .category-card:hover, .category-card.active {
-            border-color: var(--text-main);
+            border-color: var(--accent-color);
             background-color: var(--surface-hover);
         }
 
         .category-card h4 {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
 
         .category-card span {
@@ -240,62 +281,56 @@
         .action-btn {
             width: 100%;
             background-color: var(--accent-color);
-            color: var(--bg-color);
+            color: #FFFFFF;
             border: none;
-            padding: 16px;
+            padding: 14px;
             border-radius: 4px;
             font-weight: 800;
-            font-size: 14px;
+            font-size: 13px;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
+        .action-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
         /* БЛОК 2: ПРОБЛЕМАТИКА */
         .anomaly-section {
-            padding: 80px 0;
+            padding: 60px 0;
             border-top: 1px solid var(--border-color);
         }
 
-        .section-tag {
-            color: var(--titanium-color);
-            font-size: 11px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
-            display: block;
-        }
-
         .section-title {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 800;
             letter-spacing: -0.5px;
-            margin-bottom: 32px;
+            margin-bottom: 28px;
         }
 
         .anomaly-card {
             background: var(--surface-color);
-            border-left: 4px solid var(--text-main);
-            padding: 40px;
+            border-left: 4px solid var(--accent-color);
+            padding: 32px;
             border-radius: 0 8px 8px 0;
         }
 
         .anomaly-card p {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             line-height: 1.5;
         }
 
         /* БЛОК 3: БЕНТО-СЕТКА */
         .bento-section {
-            padding: 80px 0;
+            padding: 60px 0;
         }
 
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 16px;
         }
 
         @media (max-width: 768px) {
@@ -307,16 +342,17 @@
         .bento-item {
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
-            padding: 32px;
+            padding: 28px;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 220px;
+            min-height: 200px;
         }
 
         .bento-item:hover {
             background-color: var(--surface-hover);
+            border-color: var(--accent-color);
         }
 
         .bento-item.wide {
@@ -330,35 +366,35 @@
         }
 
         .bento-item h3 {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .bento-item p {
             color: var(--text-muted);
-            font-size: 14px;
+            font-size: 13px;
         }
 
         .bento-link {
             margin-top: auto;
-            color: var(--text-main);
+            color: var(--accent-color);
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
-            padding-top: 16px;
+            font-size: 13px;
+            padding-top: 12px;
         }
 
         /* БЛОК 4: ЛИЧНОСТЬ */
         .profile-section {
-            padding: 80px 0;
+            padding: 60px 0;
             border-top: 1px solid var(--border-color);
         }
 
         .profile-grid {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
-            gap: 48px;
+            gap: 40px;
             align-items: center;
         }
 
@@ -378,59 +414,58 @@
             justify-content: center;
             color: var(--text-muted);
             font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
+            font-size: 13px;
         }
 
         .profile-info h3 {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 800;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .profile-info p {
             color: var(--text-muted);
-            margin-bottom: 32px;
-            font-size: 16px;
+            margin-bottom: 24px;
+            font-size: 15px;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            gap: 20px;
         }
 
         .stat-box {
-            border-top: 2px solid var(--text-main);
-            padding-top: 16px;
+            border-top: 2px solid var(--accent-color);
+            padding-top: 12px;
         }
 
         .stat-value {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 800;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .stat-label {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-muted);
         }
 
         /* БЛОК 5: ИНТЕРАКТИВНЫЙ ТЕСТ-ЛИДМАГНИТ */
         .quiz-section {
-            padding: 80px 0;
+            padding: 60px 0;
             background-color: var(--surface-color);
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
 
         .quiz-container {
-            max-width: 700px;
+            max-width: 650px;
             margin: 0 auto;
             background-color: var(--bg-color);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 40px;
+            padding: 32px;
         }
 
         .quiz-step {
@@ -442,63 +477,123 @@
         }
 
         .quiz-question {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
         }
 
         .quiz-subquestion {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .quiz-options {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-bottom: 24px;
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
         .quiz-option {
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
-            padding: 16px;
+            padding: 14px;
             border-radius: 4px;
             cursor: pointer;
             font-weight: 600;
+            font-size: 14px;
         }
 
         .quiz-option:hover {
-            border-color: var(--text-main);
+            border-color: var(--accent-color);
         }
 
         .quiz-option.selected {
-            border-color: var(--text-main);
+            border-color: var(--accent-color);
             background-color: var(--surface-hover);
         }
 
-        /* УВЕДОМЛЕНИЕ О КОПИРОВАНИИ */
         .copy-alert {
-            background-color: var(--surface-color);
-            border: 1px solid var(--text-main);
-            padding: 16px;
+            background-color: rgba(255, 106, 0, 0.05);
+            border: 1px dashed var(--accent-color);
+            padding: 14px;
             border-radius: 4px;
-            margin-bottom: 24px;
-            font-size: 14px;
-            color: var(--text-main);
+            margin-bottom: 20px;
+            font-size: 13px;
             text-align: center;
+        }
+
+        /* БЛОК ДОПОЛНИТЕЛЬНО: FAQ (АККОРДЕОН) */
+        .faq-section {
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .faq-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .faq-trigger {
+            padding: 20px;
+            width: 100%;
+            text-align: left;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 16px;
+            font-weight: 800;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-trigger span::after {
+            content: '+';
+            font-size: 20px;
+            color: var(--accent-color);
+        }
+
+        .faq-item.open .faq-trigger span::after {
+            content: '−';
+        }
+
+        .faq-content {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        .faq-item.open .faq-content {
+            padding: 0 20px 20px 20px;
+            max-height: 200px;
         }
 
         /* БЛОК 6: КЕЙСЫ */
         .cases-section {
-            padding: 80px 0;
+            padding: 60px 0;
+            border-top: 1px solid var(--border-color);
         }
 
         .cases-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
+            gap: 20px;
         }
 
         @media (max-width: 768px) {
@@ -510,76 +605,117 @@
         .case-card {
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
-            padding: 32px;
+            padding: 28px;
             border-radius: 8px;
         }
 
         .case-meta {
-            color: var(--titanium-color);
-            font-size: 12px;
+            color: var(--accent-color);
+            font-size: 11px;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             text-transform: uppercase;
         }
 
         .case-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
-        .case-text {
-            color: var(--text-muted);
-            font-size: 15px;
-        }
-
-        /* БЛОК 7: ФУТЕР И СВЯЗЬ С АРТЕМОМ */
+        /* БЛОК 7: CTA И ФУТЕР */
         footer {
-            padding: 80px 0 40px 0;
+            padding: 60px 0 30px 0;
             background-color: var(--surface-color);
             border-top: 1px solid var(--border-color);
             text-align: center;
         }
 
-        .cta-box h2 {
-            font-size: 36px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -0.5px;
-        }
-
-        .cta-box p {
-            color: var(--text-muted);
-            max-width: 550px;
-            margin: 0 auto 32px auto;
-            font-size: 16px;
-        }
-
         .vk-btn-container {
             display: flex;
             justify-content: center;
-            margin-bottom: 48px;
+            margin-bottom: 32px;
         }
 
         .btn-vk {
             background-color: var(--accent-color);
-            color: var(--bg-color);
-            padding: 16px 40px;
+            color: #FFFFFF;
+            padding: 14px 36px;
             border-radius: 4px;
             font-weight: 800;
             text-decoration: none;
             display: inline-block;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            font-size: 14px;
+            font-size: 13px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-vk:hover {
+            background-color: var(--accent-hover);
         }
 
         .copyright {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-muted);
             border-top: 1px solid var(--border-color);
-            padding-top: 40px;
+            padding-top: 30px;
         }
+
+        /* ПЛАШКА КУКИ (COOKIE BANNER) В СТИЛЕ АРСИ */
+        .cookie-banner {
+            position: fixed;
+            bottom: 24px;
+            left: 24px;
+            right: 24px;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 10px 40px var(--shadow);
+            z-index: 2000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .cookie-text {
+            font-size: 13px;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .cookie-btn {
+            background-color: var(--accent-color);
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 4px;
+            font-weight: 800;
+            font-size: 12px;
+            cursor: pointer;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 600px) {
+            .cookie-banner {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+                bottom: 12px;
+                left: 12px;
+                right: 12px;
+            }
+            .cookie-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
@@ -591,13 +727,20 @@
         <div class="theme-option" onclick="setTheme('auto')">Автоматическая</div>
     </div>
 
-    <!-- НАВИГАЦИЯ -->
+    <!-- НАВИГАЦИЯ СТЕКЛО (ГОРИЗОНТАЛЬНАЯ КАК У АРСИ) -->
     <header>
         <div class="container header-wrapper">
             <div class="logo">Турков<span>.Страхование</span></div>
+            <ul class="nav-menu">
+                <li><a href="#">Главная</a></li>
+                <li><a href="#bento">Направления</a></li>
+                <li><a href="#profile">Об эксперте</a></li>
+                <li><a href="#faq">Вопросы</a></li>
+                <li><a href="#cta">Контакты</a></li>
+            </ul>
             <div class="nav-right">
                 <div class="theme-selector-trigger" onclick="toggleThemePopup()">Тема</div>
-                <a href="#cta" class="contact-btn">Консультация</a>
+                <a href="#cta" class="contact-btn" style="text-decoration:none; font-size:13px; font-weight:600; padding:6px 12px; border:1px solid var(--text-muted); border-radius:4px; color:var(--text-main);">Консультация</a>
             </div>
         </div>
     </header>
@@ -650,8 +793,8 @@
             </div>
         </section>
 
-        <!-- БЛОК 3: НАПРАВЛЕНИЯ (УПАКОВКА ИДЕЙ АРТЕМA) -->
-        <section class="bento-section">
+        <!-- БЛОК 3: НАПРАВЛЕНИЯ -->
+        <section class="bento-section" id="bento">
             <div class="section-header">
                 <span class="section-tag">Услуги</span>
                 <h2 class="section-title">Профессиональный брокеридж во Владимирской области</h2>
@@ -689,7 +832,7 @@
         </section>
 
         <!-- БЛОК 4: ЛИЧНОСТЬ -->
-        <section class="profile-section">
+        <section class="profile-section" id="profile">
             <div class="profile-grid">
                 <div class="profile-photo">
                     Фото: Артем Турков
@@ -742,21 +885,50 @@
                     </div>
                 </div>
 
-                <!-- Шаг 3: Финал с копированием данных для Артема -->
+                <!-- Шаг 3: Финал (Копирование при клике на саму кнопку) -->
                 <div class="quiz-step" id="step-3">
                     <div class="quiz-question">Анализ параметров завершен</div>
-                    <div class="copy-alert">
-                        <strong>✔ Данные вашего теста автоматически скопированы в буфер обмена.</strong><br>
-                        Просто вставьте их (нажмите Ctrl+V или зажмите экран и выберите «Вставить») при переходе в диалог с Артемом Турковым.
+                    <div class="copy-alert" id="copyAlertText">
+                        При нажатии на кнопку параметры вашего подбора автоматически скопируются. Просто отправьте их в чат Артему Туркову.
                     </div>
                     <p style="color: var(--text-muted); margin-bottom: 24px;">
-                        Чек-лист ловушек в договорах под ваши параметры сформирован. Нажмите на кнопку ниже, чтобы начать личную консультацию в ВК и получить аудит.
+                        Чек-лист скрытых ловушек под ваши параметры сформирован. Перейдите в личный диалог ВКонтакте для получения документа и консультации.
                     </p>
                     <div class="vk-btn-container" style="margin-bottom: 0;">
-                        <a href="https://vk.com/im/convo/380478430?entrypoint=list_all" class="btn-vk" id="final-vk-link" target="_blank" onclick="copyToClipboardFallback()">Открыть чат и получить аудит</a>
+                        <button class="btn-vk" id="final-vk-link" onclick="copyAndOpenVK(event)">Скопировать параметры и открыть ВК</button>
                     </div>
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- БЛОК: FAQ (ИНТЕРАКТИВНЫЕ ОТВЕТЫ НА ВОПРОСЫ) -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <span class="section-tag">Частые вопросы</span>
+                <h2 class="section-title">Разбор критических нюансов</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">В чем выгода работы с вами, а не напрямую с офисом страховой? <span></span></button>
+                    <div class="faq-content">
+                        <p>В офисе конкретной компании вам предложат только их внутренний тариф. Как независимый эксперт, я анализирую предложения всех топ-игроков рынка во Владимире, исключаю ненужные скрытые опции и нахожу реальную экономическую выгоду. Кроме того, при наступлении убытка офис будет защищать свои деньги, а я — ваши интересы.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">Как происходит расчет калькулятора без интеграции программ? <span></span></button>
+                    <div class="faq-content">
+                        <p>Прямая автоматическая интеграция часто выдает шаблонные, завышенные тарифы. Мы собираем ключевые параметры вашей задачи, после чего я лично провожу ручной андеррайтинг и внутренний аудит по закрытым каналам страховых компаний во Владимирской области, формируя максимально экономичное и безопасное решение.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-trigger" onclick="toggleFaq(this)">Сколько стоят ваши услуги для клиента? <span></span></button>
+                    <div class="faq-content">
+                        <p>Для клиентов подбор, аудит договоров и консультации абсолютно бесплатны. Мою работу компенсируют страховые компании как независимому эксперту-брокеру, при этом на стоимость вашего полиса это никак не влияет — вы получаете чистую цену без агентских наценок.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -765,20 +937,16 @@
         
         <!-- БЛОК 6: КЕЙСЫ -->
         <section class="cases-section">
-            <div class="section-header">
-                <span class="section-tag">Практика урегулирования</span>
-                <h2 class="section-title">Примеры работы во Владимире</h2>
-            </div>
             <div class="cases-grid">
                 <div class="case-card">
                     <div class="case-meta">Кейс: КАСКО Премиум</div>
                     <div class="case-title">Оспаривание отказа в выплате на сумму 2.5 млн рублей.</div>
-                    <div class="case-text">Страховая компания пыталась переложить ответственность на скрытые дефекты дорожного полотна. В результате экспертного вмешательства Артема Туркова выплата произведена в полном объеме за 7 дней.</div>
+                    <p class="case-text" style="color: var(--text-muted); font-size: 14px;">Страховая компания пыталась переложить ответственность на скрытые дефекты дорожного полотна. В результате экспертного вмешательства Артема Туркова выплата произведена в полном объеме за 7 дней.</p>
                 </div>
                 <div class="case-card">
                     <div class="case-meta">Кейс: Ипотека и Имущество</div>
                     <div class="case-title">Снижение стоимости ипотечной страховки в 1.8 раз.</div>
-                    <div class="case-text">Проведен аудит условий аккредитованных банком компаний для жителя Владимира. Переоформлен договор с сохранением всех требований банка, чистая экономия клиента составила 24 000 рублей в год.</div>
+                    <p class="case-text" style="color: var(--text-muted); font-size: 14px;">Проведен аудит условий аккредитованных банком компаний для жителя Владимира. Переоформлен договор с сохранением всех требований банка, чистая экономия клиента составила 24 000 рублей в год.</p>
                 </div>
             </div>
         </section>
@@ -799,9 +967,17 @@
         </div>
     </footer>
 
-    <!-- СМАPT-ЛОГИКА: ТЕМЫ + АВТОМАТИЧЕСКАЯ ПЕРЕДАЧА ДАННЫХ -->
+    <!-- ПЛАШКА КУКИ (COOKIE BANNER КАК НА СКРИНШОТЕ) -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-text">
+            Для улучшения работы сайта и его взаимодействия с пользователями мы используем файлы cookie. Продолжая работу с сайтом, Вы разрешаете использование cookie-файлов. Вы всегда можете отключить файлы cookie в настройках Вашего браузера.
+        </div>
+        <button class="cookie-btn" onclick="acceptCookies()">Принять</button>
+    </div>
+
+    <!-- СМАPT-ЛОГИКА -->
     <script>
-        // ЛОГИКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ
+        // ЛОГИКА ПОПАПА ТЕМЫ
         function toggleThemePopup() {
             document.getElementById('themePopup').classList.toggle('show');
         }
@@ -833,7 +1009,6 @@
             }
         }
 
-        // Инициализация темы при загрузке страницы
         const savedTheme = localStorage.getItem('user-theme') || 'auto';
         if (savedTheme === 'auto') {
             applyAutoTheme();
@@ -841,16 +1016,9 @@
             document.documentElement.setAttribute('data-theme', savedTheme);
         }
 
-        window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', () => {
-            if (localStorage.getItem('user-theme') === 'auto' || !localStorage.getItem('user-theme')) {
-                applyAutoTheme();
-            }
-        });
-
-        // ЛОГИКА ТЕСТА
+        // ЛОГИКА ТЕСТА И ЖЕЛЕЗНОГО КОПИРОВАНИЯ
         let selectedCategory = 'Капитал и Жизнь';
         let userChoices = { category: '', priority: '' };
-        let formattedTextForClipboard = '';
 
         function selectHeroCategory(category, element) {
             selectedCategory = category;
@@ -878,30 +1046,74 @@
                 userChoices.priority = value;
                 document.getElementById('step-2').classList.remove('active');
                 document.getElementById('step-3').classList.add('active');
-                
-                prepareLeadData();
             }
         }
 
-        function prepareLeadData() {
-            // Формируем жесткий и четкий текст, который скопируется у клиента в буфер
-            formattedTextForClipboard = `Здравствуйте, Артем! Я прошел аудит на вашем сайте. Мои параметры:\n1. Направление защиты: ${userChoices.category}\n2. Главный приоритет: ${userChoices.priority}\nЖду персональный чек-лист и аудит рисков.`;
+        // НАДЕЖНОЕ ЖЕЛЕЗНОЕ КОПИРОВАНИЕ ПРИ ПРЯМОМ КЛИКЕ ПОЛЬЗОВАТЕЛЯ
+        function copyAndOpenVK(event) {
+            event.preventDefault();
             
-            // Записываем в буфер обмена сразу при генерации шага
+            const formattedText = `Здравствуйте, Артем! Я прошел аудит на вашем сайте Турков.Страхование.\nМои параметры:\n1. Направление защиты: ${userChoices.category || 'Не выбрано'}\n2. Главный приоритет: ${userChoices.priority || 'Не выбрано'}\nЖду персональный чек-лист и аудит рисков по городу Владимир.`;
+
+            // Попытка №1: Современный API
             if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(formattedTextForClipboard).catch(err => console.error('Ошибка буфера:', err));
+                navigator.clipboard.writeText(formattedText)
+                    .then(() => proceedToVK())
+                    .catch(() => fallbackCopy(formattedText));
+            } else {
+                fallbackCopy(formattedText);
             }
         }
 
-        function copyToClipboardFallback() {
-            // Запасной принудительный механизм копирования при клике на финальную ссылку
-            const storage = document.createElement('textarea');
-            storage.value = formattedTextForClipboard;
-            document.body.appendChild(storage);
-            storage.select();
-            document.execCommand('copy');
-            document.body.removeChild(storage);
+        function fallbackCopy(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed'; // Избегаем прокрутки
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+            } catch (err) {
+                console.error('Ошибка копирования:', err);
+            }
+            document.body.removeChild(textArea);
+            proceedToVK();
         }
+
+        function proceedToVK() {
+            const alertText = document.getElementById('copyAlertText');
+            alertText.innerHTML = "<strong>✔ Параметры скопированы в буфер обмена!</strong> Перенаправляем в чат...";
+            alertText.style.borderColor = "#00FF66";
+            alertText.style.backgroundColor = "rgba(0, 255, 102, 0.05)";
+
+            setTimeout(() => {
+                window.open("https://vk.com/im/convo/380478430?entrypoint=list_all", "_blank");
+            }, 600);
+        }
+
+        // ЛОГИКА АККОРДЕОНА FAQ
+        function toggleFaq(button) {
+            const item = button.parentElement;
+            const isOpen = item.classList.contains('open');
+            
+            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+            
+            if (!isOpen) {
+                item.classList.add('open');
+            }
+        }
+
+        // ЛОГИКА КУКИ
+        function acceptCookies() {
+            localStorage.setItem('cookies-accepted', 'true');
+            document.getElementById('cookieBanner').classList.add('hidden');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('cookies-accepted') === 'true') {
+                document.getElementById('cookieBanner').classList.add('hidden');
+            }
+        });
     </script>
 </body>
 </html>
