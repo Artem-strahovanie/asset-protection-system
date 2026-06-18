@@ -1050,15 +1050,15 @@
 
         // КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ: ПРОВЕРКА СМАРТФОНА И РЕДИРЕКТ НА ПРАВИЛЬНЫЙ ИНТЕРФЕЙС ВК
         function getOptimalVKLink() {
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            if (isMobile) {
-                // Смартфон железно уходит в личку через vk.me (используем ID беседы/аккаунта из вашей ссылки)
-                return "https://vk.me/convo380478430";
-            } else {
-                // Компьютер идет по стандартной десктопной ссылке
-                return "https://vk.com/im/convo/380478430?entrypoint=list_all";
-            }
-        }
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (isMobile) {
+        // Железный мобильный адрес для перехода прямо в диалог внутри приложения (без ухода в ленту)
+        return "https://vk.com/write380478430"; 
+    } else {
+        // Десктопная ссылка на диалог для компьютеров
+        return "https://vk.com/im?sel=380478430";
+    }
+}
 
         function copyAndOpenVK(event) {
             event.preventDefault();
