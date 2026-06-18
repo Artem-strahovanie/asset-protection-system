@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Страховой эксперт Артем Турков | Vladimir — КАСКО, ОСАГО, Страхование бизнеса 33 регион</title>
+    <title>Страховой эксперт Артем Турков | Владимир — КАСКО, ОСАГО, Страхование бизнеса 33 регион</title>
     <meta name="description" content="Профессиональное страхование во Владимире и Владимирской области от эксперта Артема Туркова. Индивидуальный аудит договоров КАСКО, ОСАГО, ипотеки и защиты бизнеса без переплат.">
     <meta name="keywords" content="страхование владимир, артем турков страхование, каско владимир, осаго владимир цена, страховой брокер владимир, страхование бизнеса владимир, оформить ипотечную страховку владимир, дмс владимир">
     
@@ -152,11 +152,11 @@
             }
         }
 
-        /* ПОПАП ВЫБОРА ТЕМЫ */
+        /* ПОПАП ВЫБОРА ТЕМЫ — ИСПРАВЛЕН НА POSITION: FIXED ДЛЯ СЛЕДОВАНИЯ ЗА СКРОЛЛОМ */
         .theme-popup {
-            position: absolute;
-            top: 65px;
-            right: 24px;
+            position: fixed;
+            top: 55px; /* Корректный отступ под высоту зафиксированной шапки */
+            right: 145px; /* Выравнивание ровно под кнопкой «Тема» на ПК */
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: 6px;
@@ -164,7 +164,15 @@
             box-shadow: 0 10px 30px var(--shadow);
             display: none;
             min-width: 150px;
-            z-index: 1100;
+            z-index: 2100; /* Выше шапки и всех элементов наложения */
+        }
+
+        @media (max-width: 768px) {
+            .theme-popup {
+                top: 90px; /* Смещение под двухстрочную шапку смартфона */
+                right: auto;
+                left: 24px; /* Позиционирование на мобильных */
+            }
         }
 
         .theme-popup.show {
@@ -804,7 +812,7 @@
                 <div class="bento-item wide">
                     <div>
                         <h3>Накопительное и классическое страхование жизни</h3>
-                        <p>Инструменты защиты семейного капитала, creation гарантированных накоплений и адресная защита инвестиций от юридических притязаний.</p>
+                        <p>Инструменты защиты семейного капитала, создание гарантированных накоплений и адресная защита инвестиций от юридических притязаний.</p>
                     </div>
                     <a href="#quiz" class="bento-link" onclick="startQuizWithCategory('Капитал и Жизнь')">Анализ программ &rarr;</a>
                 </div>
@@ -873,7 +881,7 @@
                 </div>
 
                 <div class="quiz-step" id="step-2">
-                    <div class="quiz-question">Что для вас в приоритете при оформлении договора?</div>
+                    <div class="quiz-question">What для вас в приоритете при оформлении договора?</div>
                     <div class="quiz-subquestion">Шаг 2 из 2: Определение критического фактора урегулирования убытков</div>
                     <div class="quiz-options">
                         <div class="quiz-option" onclick="nextStep(2, 'Максимальная сумма покрытия рисков')">Максимальная сумма покрытия без скрытых ограничений</div>
@@ -921,7 +929,7 @@
                 <div class="faq-item">
                     <button class="faq-trigger" onclick="toggleFaq(this)">Сколько стоят ваши услуги для клиента? <span></span></button>
                     <div class="faq-content">
-                        <p>Для клиентов подбор, аудит договоров и консультации абсолютно бесплатны. Мою работу компенсируют страховые компании как независимому эксперту-брокеру, при этом на стоимость вашего полиса это никак не влияет — вы получаете чистую цену без агентских наценок.</p>
+                        <p>Для клиентов подбор, audit договоров и консультации абсолютно бесплатны. Мою работу компенсируют страховые компании как независимому эксперту-брокеру, при этом на стоимость вашего полиса это никак не влияет — вы получаете чистую цену без агентских наценок.</p>
                     </div>
                 </div>
             </div>
@@ -952,7 +960,7 @@
             <h2>Личный аудит от Артема Туркова</h2>
             <p>Свяжитесь напрямую для анализа действующих полисов, оптимизации затрат на страхование бизнеса или подбора индивидуальных программ защиты капитала во Владимире.</p>
             <div class="vk-btn-container">
-                <a href="https://vk.com/im/convo/380478430?entrypoint=list_all" class="btn-vk" target="_blank">Начать консультацию в ВКонтакте</a>
+                <a href="https://vk.com/im/convo/380478430?entrypoint=list_all" class="btn-vk" target="_blank" onclick="handleDirectVKLink(event)">Начать консультацию в ВКонтакте</a>
             </div>
             <div class="copyright">
                 &copy; 2026 Независимый страховой эксперт Артем Турков. г. Владимир, Владимирская область. Разработка и оптимизация систем рисков.
@@ -1007,7 +1015,7 @@
             document.documentElement.setAttribute('data-theme', savedTheme);
         }
 
-        // ЛОГИКА ТЕСТА И ЖЕЛЕЗНОГО КОПИРОВАНИЯ
+        // ЛОГИКА ТЕСТА И КОПИРОВАНИЯ
         let selectedCategory = 'Капитал и Жизнь';
         let userChoices = { category: '', priority: '' };
 
@@ -1040,7 +1048,18 @@
             }
         }
 
-        // НАДЕЖНОЕ ЖЕЛЕЗНОЕ КОПИРОВАНИЕ ПРИ ПРЯМОМ КЛИКЕ ПОЛЬЗОВАТЕЛЯ
+        // КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ: ПРОВЕРКА СМАРТФОНА И РЕДИРЕКТ НА ПРАВИЛЬНЫЙ ИНТЕРФЕЙС ВК
+        function getOptimalVKLink() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (isMobile) {
+                // Смартфон железно уходит в личку через vk.me (используем ID беседы/аккаунта из вашей ссылки)
+                return "https://vk.me/convo380478430";
+            } else {
+                // Компьютер идет по стандартной десктопной ссылке
+                return "https://vk.com/im/convo/380478430?entrypoint=list_all";
+            }
+        }
+
         function copyAndOpenVK(event) {
             event.preventDefault();
             
@@ -1076,9 +1095,16 @@
             alertText.style.borderColor = "#00FF66";
             alertText.style.backgroundColor = "rgba(0, 255, 102, 0.05)";
 
+            const targetUrl = getOptimalVKLink();
             setTimeout(() => {
-                window.open("https://vk.com/im/convo/380478430?entrypoint=list_all", "_blank");
+                window.open(targetUrl, "_blank");
             }, 600);
+        }
+
+        // Вспомогательная функция для прямой кнопки в футере
+        function handleDirectVKLink(event) {
+            event.preventDefault();
+            window.open(getOptimalVKLink(), "_blank");
         }
 
         // ЛОГИКА АККОРДЕОНА FAQ
