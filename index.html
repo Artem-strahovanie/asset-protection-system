@@ -152,11 +152,11 @@
             }
         }
 
-        /* ПОПАП ВЫБОРА ТЕМЫ — ИСПРАВЛЕН НА POSITION: FIXED ДЛЯ СЛЕДОВАНИЯ ЗА СКРОЛЛОМ */
+        /* ПОПАП ВЫБОРА ТЕМЫ */
         .theme-popup {
             position: fixed;
-            top: 55px; /* Корректный отступ под высоту зафиксированной шапки */
-            right: 145px; /* Выравнивание ровно под кнопкой «Тема» на ПК */
+            top: 55px;
+            right: 145px;
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: 6px;
@@ -164,14 +164,14 @@
             box-shadow: 0 10px 30px var(--shadow);
             display: none;
             min-width: 150px;
-            z-index: 2100; /* Выше шапки и всех элементов наложения */
+            z-index: 2100;
         }
 
         @media (max-width: 768px) {
             .theme-popup {
-                top: 90px; /* Смещение под двухстрочную шапку смартфона */
+                top: 90px;
                 right: auto;
-                left: 24px; /* Позиционирование на мобильных */
+                left: 24px;
             }
         }
 
@@ -191,36 +191,46 @@
             color: var(--accent-color);
         }
 
+        /* ЕДИНЫЙ СТИЛЬ ДЛЯ ЗАГОЛОВКОВ И ОТСТУПОВ */
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 32px;
+            line-height: 1.25;
+        }
+
         /* БЛОК 1: ПЕРВЫЙ ЭКРАН */
         .hero-section {
-            padding: 60px 0;
+            padding: 80px 0; /* Увеличили воздух */
         }
 
         .hero-grid {
             display: grid;
             grid-template-columns: 1.1fr 1fr;
-            gap: 40px;
+            gap: 48px;
             align-items: center;
         }
 
         @media (max-width: 968px) {
             .hero-grid {
                 grid-template-columns: 1fr;
+                gap: 32px;
             }
         }
 
-        .hero-offer h2 {
-            font-size: 42px;
+        .hero-offer h1 {
+            font-size: 32px; /* Уравняли под один размер */
             font-weight: 800;
-            line-height: 1.15;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
+            line-height: 1.25;
+            margin-bottom: 24px;
+            letter-spacing: -0.5px;
         }
 
         .hero-offer p {
-            font-size: 17px;
+            font-size: 16px;
             color: var(--text-muted);
-            margin-bottom: 28px;
+            margin-bottom: 32px;
         }
 
         .section-tag {
@@ -238,7 +248,7 @@
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 28px;
+            padding: 32px;
             box-shadow: 0 20px 40px var(--shadow);
         }
 
@@ -257,8 +267,8 @@
         .category-selector {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 24px;
         }
 
         .category-card {
@@ -277,7 +287,7 @@
         .category-card h4 {
             font-size: 13px;
             font-weight: 600;
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
 
         .category-card span {
@@ -305,56 +315,51 @@
 
         /* БЛОК 2: ПРОБЛЕМАТИКА */
         .anomaly-section {
-            padding: 60px 0;
+            padding: 80px 0; /* Больше воздуха */
             border-top: 1px solid var(--border-color);
-        }
-
-        .section-title {
-            font-size: 32px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 28px;
         }
 
         .anomaly-card {
             background: var(--surface-color);
             border-left: 4px solid var(--accent-color);
-            padding: 32px;
+            padding: 40px;
             border-radius: 0 8px 8px 0;
         }
 
         .anomaly-card p {
             font-size: 18px;
             font-weight: 600;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
-        /* БЛОК 3: БЕНТО-СЕТКА */
+        /* БЛОК 3: БЕНТО-СЕТКА С ВЫРАВНИВАНИЕМ ТАБЛИЧЕК ПО ВЫСОТЕ */
         .bento-section {
-            padding: 60px 0;
+            padding: 80px 0;
         }
 
         .bento-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
+            gap: 20px;
         }
 
         @media (max-width: 768px) {
             .bento-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
             }
         }
 
         .bento-item {
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
-            padding: 28px;
+            padding: 32px;
             border-radius: 8px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 200px;
+            height: 100%; /* Уравниваем высоту всех карточек в строке */
+            min-height: 240px;
         }
 
         .bento-item:hover {
@@ -375,12 +380,13 @@
         .bento-item h3 {
             font-size: 20px;
             font-weight: 800;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .bento-item p {
             color: var(--text-muted);
             font-size: 13px;
+            margin-bottom: 16px;
         }
 
         .bento-link {
@@ -390,24 +396,26 @@
             font-weight: 600;
             font-size: 13px;
             padding-top: 12px;
+            display: inline-block;
         }
 
-        /* БЛОК 4: ЛИЧНОСТЬ (ВШИТ ФАЙЛ С ФОТОГРАФИЕЙ) */
+        /* БЛОК 4: ЛИЧНОСТЬ */
         .profile-section {
-            padding: 60px 0;
+            padding: 80px 0;
             border-top: 1px solid var(--border-color);
         }
 
         .profile-grid {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
-            gap: 40px;
+            gap: 48px;
             align-items: center;
         }
 
         @media (max-width: 768px) {
             .profile-grid {
                 grid-template-columns: 1fr;
+                gap: 32px;
             }
         }
 
@@ -432,26 +440,26 @@
         }
 
         .profile-info h3 {
-            font-size: 26px;
+            font-size: 32px; /* Уравняли размер заголовка */
             font-weight: 800;
-            margin-bottom: 14px;
+            margin-bottom: 16px;
         }
 
         .profile-info p {
             color: var(--text-muted);
-            margin-bottom: 24px;
+            margin-bottom: 32px;
             font-size: 15px;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 24px;
         }
 
         .stat-box {
             border-top: 2px solid var(--accent-color);
-            padding-top: 12px;
+            padding-top: 14px;
         }
 
         .stat-value {
@@ -467,7 +475,7 @@
 
         /* БЛОК 5: ИНТЕРАКТИВНЫЙ ТЕСТ-ЛИДМАГНИТ */
         .quiz-section {
-            padding: 60px 0;
+            padding: 80px 0;
             background-color: var(--surface-color);
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
@@ -479,7 +487,7 @@
             background-color: var(--bg-color);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 32px;
+            padding: 40px;
         }
 
         .quiz-step {
@@ -499,20 +507,20 @@
         .quiz-subquestion {
             font-size: 13px;
             color: var(--text-muted);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .quiz-options {
             display: flex;
             flex-direction: column;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 24px;
         }
 
         .quiz-option {
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
-            padding: 14px;
+            padding: 16px;
             border-radius: 4px;
             cursor: pointer;
             font-weight: 600;
@@ -531,23 +539,23 @@
         .copy-alert {
             background-color: rgba(255, 106, 0, 0.05);
             border: 1px dashed var(--accent-color);
-            padding: 14px;
+            padding: 16px;
             border-radius: 4px;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             font-size: 13px;
             text-align: center;
         }
 
         /* БЛОК ДОПОЛНИТЕЛЬНО: FAQ (АККОРДЕОН) */
         .faq-section {
-            padding: 60px 0;
+            padding: 80px 0;
             border-top: 1px solid var(--border-color);
         }
 
         .faq-grid {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 16px;
             max-width: 800px;
             margin: 0 auto;
         }
@@ -572,6 +580,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 16px;
         }
 
         .faq-trigger span::after {
@@ -595,32 +604,36 @@
 
         .faq-item.open .faq-content {
             padding: 0 20px 20px 20px;
-            max-height: 200px;
+            max-height: 240px;
         }
 
-        /* БЛОК 6: КЕЙСЫ */
+        /* БЛОК 6: КЕЙСЫ С ВЫРАВНИВАНИЕМ КАРТОЧЕК */
         .cases-section {
-            padding: 60px 0;
+            padding: 80px 0;
             border-top: 1px solid var(--border-color);
         }
 
         .cases-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            gap: 24px;
         }
 
         @media (max-width: 768px) {
             .cases-grid {
                 grid-template-columns: 1fr;
+                gap: 16px;
             }
         }
 
         .case-card {
             background-color: var(--surface-color);
             border: 1px solid var(--border-color);
-            padding: 28px;
+            padding: 32px;
             border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Уравниваем высоту карточек кейсов */
         }
 
         .case-meta {
@@ -634,15 +647,29 @@
         .case-title {
             font-size: 18px;
             font-weight: 800;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         /* БЛОК 7: CTA И ФУТЕР */
         footer {
-            padding: 60px 0 30px 0;
+            padding: 80px 0 40px 0;
             background-color: var(--surface-color);
             border-top: 1px solid var(--border-color);
             text-align: center;
+        }
+
+        .cta-box h2 {
+            font-size: 32px; /* Уравняли размер заголовка */
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .cta-box p {
+            color: var(--text-muted);
+            max-width: 550px;
+            margin: 0 auto 32px auto;
+            font-size: 16px;
         }
 
         .vk-btn-container {
@@ -744,7 +771,7 @@
         <div class="container header-wrapper">
             <div class="logo">Турков<span>.Страхование</span></div>
             <ul class="nav-menu">
-                <li><a href="#">Главная</a></li>
+                <li><a href="#hero">Главная</a></li>
                 <li><a href="#bento">Направления</a></li>
                 <li><a href="#profile">Об эксперте</a></li>
                 <li><a href="#faq">Вопросы</a></li>
@@ -759,11 +786,11 @@
 
     <div class="container">
         
-        <section class="hero-section">
+        <section class="hero-section" id="hero">
             <div class="hero-grid">
                 <div class="hero-offer">
                     <span class="section-tag">Страховой эксперт / г. Владимир</span>
-                    <h2>Защита ваших активов и капитала во Владимире. Спокойствие, которое можно просчитать.</h2>
+                    <h1>Защита ваших активов и капитала во Владимире. Спокойствие, которое можно просчитать.</h1>
                     <p>Индивидуальные решения по страхованию без скрытых условий, переплат и бюрократии. Полный аудит рисков и личное сопровождение договоров в 33 регионе.</p>
                 </div>
                 
@@ -806,7 +833,7 @@
         <section class="bento-section" id="bento">
             <div class="section-header">
                 <span class="section-tag">Услуги</span>
-                <h2 class="section-title">Профессиональный брокеридж во Владимирской области</h2>
+                <h2 class="section-title">Страховые услуги во Владимирской области</h2>
             </div>
             <div class="bento-grid">
                 <div class="bento-item wide">
@@ -846,7 +873,7 @@
                     <img src="artem-turkov.jpg" alt="Страховой эксперт Артем Турков">
                 </div>
                 <div class="profile-info">
-                    <span class="section-tag">Страховой брокер</span>
+                    <span class="section-tag">Страховой эксперт</span>
                     <h3>Артем Турков</h3>
                     <p>Я не занимаюсь потоковой продажей типовых страховых бланков. Мой подход — это детальный аудит рисков физических лиц и бизнеса во Владимире. Я сопоставляю условия крупнейших страховых компаний России, убираю скрытые комиссии и гарантирую, что ваш договор сработает безупречно при наступлении страхового случая.</p>
                     <div class="stats-grid">
@@ -942,8 +969,8 @@
             <div class="cases-grid">
                 <div class="case-card">
                     <div class="case-meta">Кейс: КАСКО Премиум</div>
-                    <div class="case-title">Оспаривание отказа в выплате на сумму 2.5 млн рублей.</div>
-                    <p class="case-text" style="color: var(--text-muted); font-size: 14px;">Страховая компания пыталась переложить ответственность на скрытые дефекты дорожного полотна. В результате экспертного вмешательства Артема Туркова выплата произведена в полном объеме за 7 дней.</p>
+                    <div class="case-title">Оптимизация условий полиса для автомобиля премиум-сегмента.</div>
+                    <p class="case-text" style="color: var(--text-muted); font-size: 14px;">Исключены скрытые ограничения по франшизам и неявные сноски в правилах СК. Клиент во Владимире получил полноценную защиту автомобиля по реальной рыночной стоимости без переплаты за агентские наценки.</p>
                 </div>
                 <div class="case-card">
                     <div class="case-meta">Кейс: Ипотека и Имущество</div>
@@ -1048,17 +1075,15 @@
             }
         }
 
-        // КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ: ПРОВЕРКА СМАРТФОНА И РЕДИРЕКТ НА ПРАВИЛЬНЫЙ ИНТЕРФЕЙС ВК
+        // ПРОВЕРКА СМАРТФОНА И РЕДИРЕКТ НА ПРАВИЛЬНЫЙ ИНТЕРФЕЙС ВК
         function getOptimalVKLink() {
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    if (isMobile) {
-        // Железный мобильный адрес для перехода прямо в диалог внутри приложения (без ухода в ленту)
-        return "https://vk.com/write380478430"; 
-    } else {
-        // Десктопная ссылка на диалог для компьютеров
-        return "https://vk.com/im?sel=380478430";
-    }
-}
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (isMobile) {
+                return "https://vk.com/write380478430"; 
+            } else {
+                return "https://vk.com/im?sel=380478430";
+            }
+        }
 
         function copyAndOpenVK(event) {
             event.preventDefault();
@@ -1101,7 +1126,6 @@
             }, 600);
         }
 
-        // Вспомогательная функция для прямой кнопки в футере
         function handleDirectVKLink(event) {
             event.preventDefault();
             window.open(getOptimalVKLink(), "_blank");
