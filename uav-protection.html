@@ -1,61 +1,31 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <script>
-        // Инициализация темы при загрузке (жестко фиксируем премиальную темную тему столичного региона)
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    </script>
-
-    <script type="text/javascript">
-        // --- Автоматический счетчик Яндекс.Метрики ---
-        (function(m,e,t,r,i,k,a){
-            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-            m[i].l=1*new Date();
-            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110001642', 'ym');
-        ym(110001642, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-    </script>
-    <noscript>
-        <div>
-            <img src="https://mc.yandex.ru/watch/110001642" style="position:absolute; left:-9999px;" alt="" />
-        </div>
-    </noscript>
-
-    <script>
-        // Логика перехвата поисковых роботов для СЕО-превью через Яндекс Функцию
-        window.addEventListener('DOMContentLoaded', () => {
-            const isBot = /YandexBot|YandexAccessibilityBot|YandexMobileBot|Googlebot/i.test(navigator.userAgent);
-            if (isBot) {
-                fetch('https://functions.yandexcloud.net/d4ecn5ag33dcdd2deivd?bot=true&url=' + encodeURIComponent(window.location.href))
-                .then(res => res.json())
-                .then(data => console.log("Профиль поисковой матрицы синхронизирован"))
-                .catch(e => console.log("Пропуск предварительного просмотра"));
-            }
-        });
-    </script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ВЫСОКОЭФФЕКТИВНЫЕ МЕТА-ТЕГИ ДЛЯ КЛАССИЧЕСКОГО СЕО И ИИ-ПОИСКОВИКОВ -->
+    <!-- ГЛАВНЫЕ МЕТА-ТЕГИ ДЛЯ СЕО-ПРОДВИЖЕНИЯ В ЯНДЕКС И GOOGLE -->
     <title>Страхование недвижимости от БПЛА в Москве и Московской области | АльфаЗАЩИТА от беспилотников</title>
     <meta name="description" content="Интерактивный расчет и подбор программы страхования квартир и частных домов от падения БПЛА и техногенных рисков в Московском регионе. Оформление полиса АльфаСтрахование без переплат у эксперта Артема Туркова.">
     <meta name="keywords" content="страхование от бпла москва, защита от атак бпла химки, застраховать квартиру от беспилотников одинцово, альфастрахование бпла цена, страховой брокер красногорск, защита недвижимости подмосковье, полис от беспилотников мытищи">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://t-ins.ru/uav-protection.html">
 
-    <!-- РАЗМЕТКА ДЛЯ КОРРЕКТНОГО ОТОБРАЖЕНИЯ ПРЕВЬЮ В ЧАТАХ И СЕТЯХ (OPEN GRAPH) -->
+    <!-- КРОССБРАУЗЕРНОЕ ПОДКЛЮЧЕНИЕ ФАВИКОНОВ (ФИРМЕННЫЙ ЩИТ ДЛЯ ВКЛАДОК БРАУЗЕРА) -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- МЕТА-ТЕГИ МЕЖДУНАРОДНОГО СТАНДАРТА OPEN GRAPH ДЛЯ СЕТЕЙ И МЕССЕНДЖЕРОВ (ФОТО АРТЕМА В ЧАТАХ) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Скрининг уязвимости имущества: Расчет модуля защиты от БПЛА в Москве и Подмосковье">
-    <meta property="og:description" content="Оцифруйте риски вашей недвижимости за 30 секунд. Сравните тарифные модули и обеспечьте полное ментальное спокойствие.">
     <meta property="og:url" content="https://t-ins.ru/uav-protection.html">
+    <meta property="og:title" content="Страховой эксперт Артем Турков | Защита от БПЛА">
+    <meta property="og:description" content="Интерактивный подбор параметрического модуля защиты квартир и домов от рисков падения беспилотных аппаратов в Москве и Подмосковье.">
     <meta property="og:image" content="https://t-ins.ru/artem-turkov.jpg">
-    <meta property="og:site_name" content="Турков.Страхование">
-    <meta property="og:locale" content="ru_RU">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
 
-    <!-- ПРОФЕССИОНАЛЬНАЯ МИКРОРАЗМЕТКА SCHEMA.ORG ДЛЯ БЕЗОШИБОЧНОГО СЧИТЫВАНИЯ НЕЙРОСЕТЯМИ (GEO) -->
+    <!-- СЕО-ПАКЕТ ПРОФЕССИОНАЛЬНОЙ МИКРОРАЗМЕТКИ SCHEMA.ORG (ДЛЯ ИИ-ЧАТОВ, СТРУКТУРИРОВАНИЯ ДАННЫХ И СНИППЕТОВ) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -87,717 +57,861 @@
     }
     </script>
 
-    <!-- ИКОНКИ И ФАВИКОНЫ САЙТА -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.png" type="image/png" sizes="32x32">
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <!-- АНАЛИТИЧЕСКИЙ КОД СЧЕТЧИКА ЯНДЕКС.МЕТРИКИ (КОНТРОЛЬ ТРАФИКА И ПОИСКОВЫХ ЗАПРОСОВ) -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110001642', 'ym');
 
-    <!-- ПОДКЛЮЧЕНИЕ СЕО-ОПТИМИЗИРОВАННЫХ ШРИФТОВ С ПРЕДВАРИТЕЛЬНЫМ РАЗРЕШЕНИЕМ ДОСТУПА -->
+        ym(110001642, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/110001642" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+
+    <!-- ТЕХНИЧЕСКИЙ СЕО-ОПТИМИЗИРОВАННЫЙ СБОР ШРИФТОВ С ПРЕДВАРИТЕЛЬНЫМ ПОДКЛЮЧЕНИЕМ К СЕРВЕРАМ GOOGLE -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS ПЕРЕМЕННЫЕ ПРЕМИАЛЬНОЙ СТОЛИЧНОЙ ПАЛИТРЫ (ГРАФИТ + МЕДНЫЙ ЯНТАРЬ И ПЛАТИНА) */
+        /* РОДНАЯ УЛЬТРА СОВРЕМЕННАЯ ПАЛИТРА САЙТА АРТЕМ ТУРКОВ (ГРАФИТ + МЕДНЫЙ ЯНТАРЬ) */
         :root {
-            --bg-deep: #0B0C10; 
-            --glass-bg: rgba(26, 26, 36, 0.65); 
-            --glass-border: 1px solid rgba(255, 255, 255, 0.08); 
-            --accent-gold: #C5A059; 
-            --accent-orange: #FF6A00; /* Наш премиальный янтарно-медный цвет */
-            --accent-berry: #E91E63;
-            --text-main: #F5F5F5;
-            --text-dim: rgba(245, 245, 245, 0.55);
-            --elem-bg: rgba(255, 255, 255, 0.03);
-            --elem-border: rgba(255, 255, 255, 0.1);
-            --nav-bg: rgba(11, 12, 16, 0.95);
-            --font-main: 'Manrope', sans-serif;
-            --font-serif: 'Cormorant Garamond', serif;
-            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --bg-color: #0B0B0D;
+            --surface-color: #131317;
+            --surface-hover: #1C1C22;
+            --accent-color: #FF6A00;       /* Фирменный медный янтарный цвет */
+            --accent-hover: #E57C23;       /* Темный медный оттенок */
+            --text-main: #F5F5F7;
+            --text-muted: #929297;
+            --border-color: rgba(255, 106, 0, 0.1);
+            --header-bg: rgba(11, 11, 13, 0.75);
+            --shadow: rgba(0, 0, 0, 0.6);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         [data-theme="light"] {
-            --bg-deep: #F4F5F7; 
-            --glass-bg: rgba(255, 255, 255, 0.9); 
-            --glass-border: 1px solid rgba(11, 12, 16, 0.08); 
-            --accent-gold: #B38639; 
-            --accent-orange: #E57C23;
-            --accent-berry: #C2185B;
-            --text-main: #1F2022;
-            --text-dim: rgba(31, 32, 34, 0.65);
-            --elem-bg: rgba(0, 0, 0, 0.02);
-            --elem-border: rgba(0, 0, 0, 0.08);
-            --nav-bg: rgba(244, 245, 247, 0.95);
+            --bg-color: #F8F9FA;
+            --surface-color: #FFFFFF;
+            --surface-hover: #F1F3F5;
+            --accent-color: #E57C23;
+            --accent-hover: #D46A12;
+            --text-main: #1D1D1F;
+            --text-muted: #6E6E73;
+            --border-color: rgba(229, 124, 35, 0.15);
+            --header-bg: rgba(248, 249, 250, 0.8);
+            --shadow: rgba(0, 0, 0, 0.05);
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; outline: none; -webkit-tap-highlight-color: transparent; }
-        html { scroll-behavior: smooth; }
-        body { 
-            background: var(--bg-deep); 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
             color: var(--text-main);
-            font-family: var(--font-main); 
+            font-family: 'Manrope', sans-serif;
             line-height: 1.6;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
-            transition: background-color 0.4s ease, color 0.4s ease;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
-            padding-bottom: 60px;
         }
 
-        h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 600; letter-spacing: 0.5px; }
-        a { text-decoration: none; color: inherit; transition: var(--transition); }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-        /* ВЕРХНЯЯ НАВИГАЦИОННАЯ ПАНЕЛЬ */
+        /* НАВИГАЦИОННАЯ ПАНЕЛЬ СТЕКЛО (STICKY GLASSMORPHISM) В СТИЛЕ АРСИ */
         header {
-            position: fixed; top: 0; width: 100%; padding: 20px 5%;
-            display: flex; justify-content: space-between; align-items: center;
-            z-index: 2000; background: transparent; transition: var(--transition);
+            position: sticky;
+            top: 0;
+            background: var(--header-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            padding: 16px 0;
         }
-        header.scrolled { 
-            background: var(--glass-bg) !important; 
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            padding: 12px 5% !important; border-bottom: var(--glass-border);
-        }
-        .brand-name { font-family: var(--font-serif); font-size: 20px; letter-spacing: 4px; text-transform: uppercase; font-weight: 600; }
-        .brand-name span { color: var(--accent-orange); }
-        
-        .header-controls { display: flex; gap: 12px; align-items: center; }
-        
-        #themeToggle, .btn-consultation-nav {
-            padding: 0 15px; height: 35px; font-size: 10px; font-weight: 600; letter-spacing: 2px;
-            display: inline-flex; align-items: center; justify-content: center;
-            border-radius: 8px; border: 1px solid var(--elem-border); background: var(--elem-bg);
-            cursor: pointer; transition: var(--transition); color: var(--text-main); text-transform: uppercase;
-        }
-        #themeToggle:hover, .btn-consultation-nav:hover { border-color: var(--accent-orange); transform: translateY(-2px); }
-        .btn-consultation-nav { background: rgba(255, 106, 0, 0.15); border-color: var(--accent-orange); color: var(--text-main); }
-        .btn-consultation-nav:hover { background: var(--accent-orange); color: #fff; }
 
-        /* ГЛАВНЫЙ МАКЕТ СТРАНИЦЫ */
-        .main-layout { max-width: 1200px; margin: 100px auto 60px; padding: 0 20px; }
+        .header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
 
-        /* НАВИГАЦИОННЫЕ ВКЛАДКИ (ТАБЫ) */
-        .tabs-nav { display: flex; gap: 10px; margin-bottom: 30px; border-bottom: var(--glass-border); padding-bottom: 15px; overflow-x: auto; scrollbar-width: none; }
+        .logo {
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .theme-selector-trigger {
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            padding: 6px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .header-wrapper {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .nav-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+            .nav-menu {
+                width: 100%;
+                overflow-x: auto;
+                padding-bottom: 4px;
+                gap: 16px;
+            }
+        }
+
+        /* ОКНО НАСТРОЕК ТЕМЫ */
+        .theme-popup {
+            position: fixed;
+            top: 55px;
+            right: 145px;
+            background-color: var(--surface-color);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 6px 0;
+            box-shadow: 0 10px 30px var(--shadow);
+            display: none;
+            min-width: 150px;
+            z-index: 2100;
+        }
+
+        @media (max-width: 768px) {
+            .theme-popup {
+                top: 90px;
+                right: auto;
+                left: 24px;
+            }
+        }
+
+        .theme-popup.show {
+            display: block;
+        }
+
+        .theme-option {
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .theme-option:hover {
+            background-color: var(--surface-hover);
+            color: var(--accent-color);
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 32px;
+            line-height: 1.25;
+        }
+
+        .section-tag {
+            color: var(--accent-color);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        /* НАВИГАЦИОННЫЕ ВКЛАДКИ (ТАБЫ) В СТИЛЕ РОДНОГО САЙТА */
+        .tabs-nav { display: flex; gap: 10px; margin: 30px 0; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; overflow-x: auto; scrollbar-width: none; }
         .tabs-nav::-webkit-scrollbar { display: none; }
         .tab-btn {
-            padding: 12px 24px; border: 1px solid var(--elem-border); background: var(--glass-bg);
-            color: var(--text-dim); border-radius: 12px; cursor: pointer; font-size: 14px; font-weight: 500;
-            white-space: nowrap; transition: var(--transition); font-family: var(--font-main);
+            padding: 12px 24px; border: 1px solid var(--border-color); background: var(--surface-color);
+            color: var(--text-muted); border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 700;
+            white-space: nowrap; transition: var(--transition); text-transform: uppercase; letter-spacing: 0.5px;
         }
-        .tab-btn:hover { border-color: var(--accent-orange); color: var(--text-main); }
-        .tab-btn.active { background: var(--accent-orange); color: #FFF; border-color: var(--accent-orange); box-shadow: 0 8px 20px rgba(255,106,0,0.2); }
+        .tab-btn:hover { border-color: var(--accent-color); color: var(--text-main); }
+        .tab-btn.active { background: var(--accent-color); color: #FFF; border-color: var(--accent-color); box-shadow: 0 8px 20px rgba(255,106,0,0.15); }
 
-        .tab-content { display: none; animation: fadeIn 0.5s ease; }
+        .tab-content { display: none; animation: fadeIn 0.4s ease; }
         .tab-content.active { display: block; }
 
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* БЕНТО-СТРУКТУРНАЯ СЕТКА КАРТОЧЕК */
-        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .bento-card { background: var(--glass-bg); border: var(--glass-border); border-radius: 24px; padding: 30px; position: relative; overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between; }
-        .bento-card:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+        /* БЕНТО-СЕТКА С РОДНЫМ КУБИЧЕСКИМ ДИЗАЙНОМ */
+        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 40px; }
+        .bento-card { background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 8px; padding: 32px; position: relative; overflow: hidden; transition: var(--transition); display: flex; flex-direction: column; justify-content: space-between; }
+        .bento-card:hover { border-color: var(--accent-color); background-color: var(--surface-hover); }
         
         .span-2 { grid-column: span 2; }
         .span-3 { grid-column: span 3; }
 
-        .bento-inline-btn {
-            margin-top: 15px; padding: 10px 18px; border-radius: 10px; font-size: 12px; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; justify-content: center;
-            gap: 6px; border: 1px solid var(--accent-orange); background: rgba(255, 106, 0, 0.08); color: var(--text-main); transition: var(--transition); width: fit-content;
-        }
-        .bento-inline-btn:hover { background: var(--accent-orange); color: #FFF; transform: translateY(-1px); }
-
-        /* ЭЛЕМЕНТЫ ФОРМЫ И ИНТЕРАКТИВНОГО ТЕСТА */
+        /* ИНТЕРАКТИВНЫЙ ИНТЕРФЕЙС КАЛЬКУЛЯТОРА */
         .calc-group { margin-bottom: 25px; }
-        .calc-label { font-size: 15px; font-weight: 600; margin-bottom: 12px; display: block; color: var(--text-main); line-height: 1.4; }
+        .calc-label { font-size: 14px; font-weight: 800; margin-bottom: 12px; display: block; color: var(--text-main); line-height: 1.4; text-transform: uppercase; letter-spacing: 0.5px; }
         
-        .radio-box-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+        .radio-box-group { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
         .radio-tile {
-            border: 1px solid var(--elem-border); background: var(--elem-bg); padding: 16px;
-            border-radius: 12px; cursor: pointer; display: flex; flex-direction: column; gap: 4px;
+            border: 1px solid var(--border-color); background: rgba(255,255,255,0.01); padding: 16px;
+            border-radius: 6px; cursor: pointer; display: flex; flex-direction: column; gap: 4px;
             position: relative; transition: var(--transition);
         }
-        .radio-tile input { position: absolute; top: 16px; right: 16px; accent-color: var(--accent-orange); }
-        .radio-tile-title { font-size: 14px; font-weight: 700; color: var(--text-main); }
-        .radio-tile-desc { font-size: 12px; color: var(--text-dim); line-height: 1.4; }
-        .radio-tile.selected { border-color: var(--accent-orange); background: rgba(255, 106, 0, 0.08); }
+        .radio-tile input { position: absolute; top: 16px; right: 16px; accent-color: var(--accent-color); }
+        .radio-tile-title { font-size: 14px; font-weight: 700; color: var(--text-main); padding-right: 20px; }
+        .radio-tile-desc { font-size: 12px; color: var(--text-muted); line-height: 1.4; margin-top: 4px; }
+        .radio-tile.selected { border-color: var(--accent-color); background: var(--surface-hover); }
 
-        .range-slider { width: 100%; accent-color: var(--accent-orange); margin: 10px 0; height: 6px; border-radius: 3px; }
-        .range-val { font-size: 18px; font-weight: 700; color: var(--accent-gold); }
+        .range-slider { width: 100%; accent-color: var(--accent-color); margin: 12px 0; height: 6px; border-radius: 4px; background: var(--surface-hover); cursor: pointer; }
+        .range-val { font-size: 16px; font-weight: 800; color: var(--accent-color); text-transform: uppercase; }
         
-        /* ОКНО РЕЗУЛЬТАТОВ АУДИТА */
-        .result-score-box { text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center; background: linear-gradient(135deg, var(--elem-bg), transparent); padding: 40px 20px; transition: var(--transition); }
-        .score-number { font-size: 32px; font-weight: 800; line-height: 1.2; color: var(--accent-orange); font-family: var(--font-serif); }
-        .score-status { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-top: 12px; }
+        /* КАРТОЧКА СБОРА ДИНАМИЧЕСКИХ РЕЗУЛЬТАТОВ (СПРАВА) */
+        .result-score-box { text-align: left; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; background: var(--surface-color); padding: 32px; border-left: 4px solid var(--accent-color); }
+        .score-number { font-size: 22px; font-weight: 800; line-height: 1.3; color: var(--text-main); }
+        .score-status { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-top: 8px; padding: 4px 10px; background: rgba(255, 106, 0, 0.1); border-radius: 4px; }
 
-        /* ПРОФЕССИОНАЛЬНЫЕ МАРКЕТИНГОВЫЕ КНОПКИ ДЕЙСТВИЯ */
+        /* ПРОФЕССИОНАЛЬНЫЕ МАРКЕТИНГОВЫЕ КНОПКИ */
         .btn-marketing {
             display: inline-flex; align-items: center; justify-content: center; width: 100%;
-            padding: 22px 30px; background: var(--accent-orange); color: #FFF; border: none;
-            border-radius: 16px; font-family: var(--font-main); font-size: 15px; font-weight: 700;
+            padding: 16px 32px; background: var(--accent-color); color: #FFF; border: none;
+            border-radius: 4px; font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 800;
             text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: var(--transition);
-            box-shadow: 0 10px 25px rgba(255, 106, 0, 0.25); text-align: center;
+            text-align: center; text-decoration: none;
         }
-        .btn-marketing:hover { transform: translateY(-2px); box-shadow: 0 15px 35px rgba(255, 106, 0, 0.4); opacity: 0.95; }
-
-        .btn-marketing.btn-online-gold {
-            background: linear-gradient(135deg, #B38639, #8C6221) !important;
-            box-shadow: 0 10px 25px rgba(179,134,57,0.3) !important;
-        }
-        .btn-marketing.btn-online-gold:hover {
-            box-shadow: 0 15px 35px rgba(179,134,57,0.5) !important;
-        }
+        .btn-marketing:hover { background-color: var(--accent-hover); transform: translateY(-1px); }
 
         .btn-marketing.btn-online-orange {
-            background: linear-gradient(135deg, var(--accent-orange), #b34a00) !important;
-            box-shadow: 0 10px 25px rgba(255, 106, 0, 0.3) !important;
+            background: linear-gradient(135deg, var(--accent-color), #b34a00) !important;
         }
-        .btn-marketing.btn-online-orange:hover {
-            box-shadow: 0 15px 35px rgba(255, 106, 0, 0.5) !important;
-        }
+        .btn-marketing.btn-online-orange:hover { background: var(--accent-hover) !important; }
 
         .btn-reset {
-            background: transparent; border: 1px dashed var(--text-dim); color: var(--text-dim);
-            padding: 10px 20px; border-radius: 10px; font-size: 12px; font-weight: 600;
-            cursor: pointer; text-transform: uppercase; letter-spacing: 1px; transition: var(--transition);
+            background: transparent; border: 1px dashed var(--text-muted); color: var(--text-muted);
+            padding: 8px 16px; border-radius: 4px; font-size: 11px; font-weight: 800;
+            cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; transition: var(--transition);
         }
-        .btn-reset:hover { border-color: var(--accent-orange); color: var(--accent-orange); }
+        .btn-reset:hover { border-color: var(--accent-color); color: var(--accent-color); }
 
-        /* ИНДИКАЦИЯ ТАРИФНЫХ ПАКЕТОВ И ТЕХНОГЕННЫХ ФАКТОРОВ */
-        .fact-num { font-size: 36px; font-family: var(--font-serif); color: var(--accent-gold) !important; font-weight: 700; margin-bottom: 5px; }
-        .fact-title { font-size: 18px; font-weight: 600; margin-bottom: 10px; line-height: 1.3; font-family: var(--font-serif); color: var(--text-main); }
-        .fact-desc { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+        /* НУМЕРАЦИЯ ДЛЯ ГЕО-МОДУЛЕЙ */
+        .fact-num { font-size: 28px; color: var(--accent-color) !important; font-weight: 800; margin-bottom: 4px; }
+        .fact-title { font-size: 16px; font-weight: 800; margin-bottom: 8px; line-height: 1.3; color: var(--text-main); }
+        .fact-desc { font-size: 13px; color: var(--text-muted); line-height: 1.6; }
 
-        /* ОКРУГЛЫЕ ИНФОРМАЦИОННЫЕ ЗНАЧКИ */
         .recipe-badge { 
-            background: var(--accent-orange) !important; 
-            color: #FFF !important; 
-            padding: 6px 16px; 
-            border-radius: 30px; 
-            font-size: 11px; 
-            font-weight: 700; 
+            background: rgba(255, 106, 0, 0.1) !important; 
+            color: var(--accent-color) !important; 
+            padding: 4px 12px; 
+            border-radius: 4px; 
+            font-size: 10px; 
+            font-weight: 800; 
             text-transform: uppercase; 
             display: inline-block; 
-            margin-bottom: 15px; 
+            margin-bottom: 12px; 
             letter-spacing: 1px;
+            border: 1px solid rgba(255, 106, 0, 0.15);
         }
 
-        /* ЯРКАЯ ИНТЕРАКТИВНАЯ КНОПКА ОТПРАВКИ ССЫЛКИ СОСЕДЯМ И СЕМЬЕ */
-        .share-section { margin-top: 40px; background: linear-gradient(135deg, rgba(255, 106, 0, 0.08), rgba(179, 134, 57, 0.08)); border: 2px solid var(--accent-orange); border-radius: 28px; padding: 40px 30px; text-align: center; box-shadow: 0 15px 40px rgba(255,106,0,0.1); }
+        /* КНОПКА ШЕРИНГА */
+        .share-section { margin-top: 40px; background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 8px; padding: 40px 32px; text-align: center; }
         .btn-share {
-            display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 18px 40px;
-            background: linear-gradient(135deg, var(--accent-orange), #b34a00) !important; border: none; border-radius: 16px;
-            font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: var(--transition); color: #FFF;
-            box-shadow: 0 10px 25px rgba(255, 106, 0, 0.4) !important; width: 100%; max-width: 400px;
+            display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 16px 40px;
+            background: var(--accent-color) !important; border: none; border-radius: 4px;
+            font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: var(--transition); color: #FFF; width: 100%; max-width: 400px;
         }
-        .btn-share:hover { transform: scale(1.03) translateY(-2px); box-shadow: 0 15px 35px rgba(255, 106, 0, 0.6) !important; }
+        .btn-share:hover { background-color: var(--accent-hover) !important; }
 
-        /* НИЖНЯЯ ПАНЕЛЬ И АВТОРСКИЕ СТРОКИ */
         footer { 
             margin-top: 80px; 
             padding: 60px 0 40px; 
-            border-top: var(--glass-border); 
-            background: transparent;
-            width: 100%;
+            border-top: 1px solid var(--border-color); 
+            background: var(--surface-color);
+            text-align: center;
         }
-        .footer-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center; }
-        .footer-text-sub { font-size: 12px; color: var(--text-dim); margin-top: 15px; line-height: 1.6; text-align: justify; }
+        .footer-text-sub { font-size: 11px; color: var(--text-muted); margin-top: 20px; line-height: 1.6; text-align: justify; }
 
         @media (max-width: 968px) {
             .bento-grid { grid-template-columns: 1fr; }
             .span-2, .span-3 { grid-column: span 1; }
-            .main-layout { margin-top: 90px; }
         }
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
 
-<header id="header">
-    <div class="brand-name">Турков<span>.Страхование</span></div>
-    <div class="header-controls">
-        <a href="#cta" class="btn-consultation-nav">КОНСУЛЬТАЦИЯ</a>
-        <button id="themeToggle" onclick="toggleTheme()">ТЕНЬ</button>
+    <div class="theme-popup" id="themePopup">
+        <div class="theme-option" onclick="setTheme('light')">Светлая</div>
+        <div class="theme-option" onclick="setTheme('dark')">Темная</div>
+        <div class="theme-option" onclick="setTheme('auto')">Автоматическая</div>
     </div>
-</header>
 
-<main class="main-layout">
-    
-    <!-- СЕО-ОПТИМИЗИРОВАННЫЙ ВВОДНЫЙ БЛОК СТРАНИЦЫ -->
-    <section style="text-align: center; max-width: 850px; margin: 0 auto 40px;">
-        <h1 style="font-size: clamp(26px, 4vw, 44px); line-height: 1.2; margin-bottom: 15px;">
-            АльфаЗАЩИТА недвижимости в Москве и МО: <span style="color: var(--accent-gold); font-style: italic;">Оцифровка рисков и защита от БПЛА</span>
-        </h1>
-        <p style="font-size: 15px; color: var(--text-dim); line-height: 1.7;">
-            Владеете современной квартирой в высотных комплексах Москвы или частным домом в Московской области? В условиях изменения современной техногенной среды классические страховые полисы часто не учитывают новые специфические риски падения беспилотных летательных аппаратов (БПЛА). Пройдите интерактивный экспресс-аудит параметров защиты вашего имущества и подключите официальные расчетные модули для обеспечения абсолютной уверенности.
-        </p>
-    </section>
-
-    <!-- ВКЛАДКИ НАВИГАЦИИ ПО РАЗДЕЛАМ АНАЛИЗА -->
-    <nav class="tabs-nav" aria-label="Разделы страницы">
-        <button class="tab-btn active" onclick="switchTab(event, 'tab-calc')">📊 Скрининг уязвимости и выбор тарифа</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-facts')">🏢 Территориальные модули и районы СЕО</button>
-        <button class="tab-btn" onclick="switchTab(event, 'tab-recipes')">📜 Регламент АльфаСтрахования и юридические гарантии</button>
-    </nav>
-
-    <!-- СОДЕРЖИМОЕ ВКЛАДКИ 1: ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР-ТЕСТ -->
-    <div id="tab-calc" class="tab-content active">
-        <div class="bento-grid">
-            
-            <div class="bento-card span-2">
-                <div>
-                    <h2 class="serif" style="font-size: 24px; margin-bottom: 25px; color: var(--text-main);">Параметрический экспресс-аудит конструктивных особенностей объекта</h2>
-                    
-                    <div class="calc-group">
-                        <label class="calc-label">1. Выберите категорию, к которой относится ваша жилая недвижимость в Московском регионе:</label>
-                        <div class="radio-box-group">
-                            <label class="radio-tile" onclick="selectTile(this)">
-                                <input type="radio" name="property_type" value="high_apartment" checked>
-                                <span class="radio-tile-title">Квартира на верхних этажах (10+)</span>
-                                <span class="radio-tile-desc">Современные многоэтажные жилые комплексы Новой Москвы и спальных районов столицы.</span>
-                            </label>
-                            <label class="radio-tile" onclick="selectTile(this)">
-                                <input type="radio" name="property_type" value="low_apartment");">
-                                <span class="radio-tile-title">Квартира на нижних этажах (1-9)</span>
-                                <span class="radio-tile-desc">Типовая городская застройка в черте МКАД и границах крупных городов-спутников.</span>
-                            </label>
-                            <label class="radio-tile" onclick="selectTile(this)">
-                                <input type="radio" name="property_type" value="private_house">
-                                <span class="radio-tile-title">Частный дом / Коттедж / Дача</span>
-                                <span class="radio-tile-desc">Загородные домовладения и индивидуальные постройки на территории Московской области.</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="calc-group">
-                        <label class="calc-label">2. Какова плотность инфраструктуры и специфика расположения вашего района?</label>
-                        <div class="radio-box-group">
-                            <label class="radio-tile" onclick="selectTile(this)">
-                                <input type="radio" name="location_density" value="dense_hub" checked>
-                                <span class="radio-tile-title">Высокая плотность застройки</span>
-                                <span class="radio-tile-desc">Близость к крупным транспортным узлам, административным центрам или промышленным зонам.</span>
-                            </label>
-                            <label class="radio-tile" onclick="selectTile(this)">
-                                <input type="radio" name="location_density" value="suburb_zone">
-                                <span class="radio-tile-title">Умеренная плотность / Пригород</span>
-                                <span class="radio-tile-desc">Спальные районы Подмосковья, загородные охраняемые поселки и удаленные зеленые зоны.</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="calc-group">
-                        <label class="calc-label">3. Укажите режим эксплуатации и присутствия собственников на объекте:</label>
-                        <div class="radio-box-group">
-                            <label class="radio-tile" onclick="selectTile(this)">
-                                <input type="radio" name="occupancy_mode" value="remote_leave" checked>
-                                <span class="radio-tile-title">Периодическое отсутствие</span>
-                                <span class="radio-tile-desc">Имущество часто остается без прямого присмотра из-за частых командировок, путешествий или отпусков.</span>
-                            </label>
-                            <label class="radio-tile" onclick="selectTile(this)">
-                                <input type="radio" name="occupancy_mode" value="always_home">
-                                <span class="radio-tile-title">Постоянное проживание</span>
-                                <span class="radio-tile-desc">Собственники находятся на объекте непрерывно (дистанционная работа, постоянное ведение хозяйства).</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="calc-group">
-                        <label class="calc-label">4. Выберите желаемый объем финансового покрытия ущерба (включая конструктив, отделку и движимые вещи):</label>
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-                            <span style="font-size: 13px; color: var(--text-dim);">Выбранный модуль тарифа «АльфаЗАЩИТА»:</span>
-                            <span id="range-sit-val" class="range-val" style="color: var(--accent-orange);">Расчет...</span>
-                        </div>
-                        <input type="range" id="sit_slider" class="range-slider" min="0" max="2" value="1" step="1" oninput="calculateNeckIndex()">
-                    </div>
-                </div>
-
-                <div style="margin-top: 30px; display: flex; justify-content: flex-end;">
-                    <button class="btn-reset" onclick="resetCalculator()">Сбросить параметры калькулятора</button>
-                </div>
+    <header>
+        <div class="container header-wrapper">
+            <div class="logo">Турков<span>.Страхование</span></div>
+            <ul class="nav-menu">
+                <li><a href="index.html#hero">Главная</a></li>
+                <li><a href="#bento">Направления</a></li>
+                <li><a href="index.html#profile">Об эксперте</a></li>
+                <li><a href="index.html#faq">Вопросы</a></li>
+                <li><a href="#cta">Контакты</a></li>
+            </ul>
+            <div class="nav-right">
+                <div class="theme-selector-trigger" onclick="toggleThemePopup()">Тема</div>
+                <a href="#cta" class="contact-btn" style="text-decoration:none; font-size:13px; font-weight:600; padding:6px 12px; border:1px solid var(--text-muted); border-radius:4px; color:var(--text-main);">Консультация</a>
             </div>
+        </div>
+    </header>
 
-            <!-- ИНТЕРАКТИВНОЕ ОКНО ОЦИФРОВКИ РЕЗУЛЬТАТОВ -->
-            <div class="bento-card result-score-box">
-                <div style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; color: var(--text-dim); margin-bottom: 10px;">Профиль защищенности объекта:</div>
-                <div id="calc-result-title" class="score-number" style="font-size: 24px; margin: 15px 0;">Формирование условий...</div>
-                <div id="calc-status" class="score-status" style="color: var(--accent-gold);">Режим: Расчет тарифа</div>
-                <p id="calc-text" style="font-size: 13px; opacity: 0.8; margin-top: 15px; line-height: 1.5; text-align: center;">
-                    Идет анализ параметров...
-                </p>
-            </div>
+    <div class="container">
+        
+        <!-- ВВОДНЫЙ БЛОК СТРАНИЦЫ (ГЕО-ОПТИМИЗАЦИЯ ПОД МОСКВУ И МО) -->
+        <section style="padding: 60px 0 20px; text-align: left;">
+            <span class="section-tag">Специализированная программа защиты / Москва и МО</span>
+            <h1 style="font-size: clamp(24px, 4vw, 36px); font-weight: 800; line-height: 1.25; margin-bottom: 20px; letter-spacing: -0.5px;">
+                АльфаЗАЩИТА недвижимости в Москве и МО: Оцифровка техногенных рисков и защита от БПЛА
+            </h1>
+            <p style="font-size: 16px; color: var(--text-muted); max-width: 950px;">
+                Владеете современной квартирой в высотных комплексах Москвы или частным домом в Московской области? В условиях изменения современной техногенной среды классические страховые полисы часто не учитывают новые специфические риски падения беспилотных летательных аппаратов (БПЛА). Пройдите интерактивный экспресс-аудит параметров защиты вашего имущества и подключите официальные расчетные модули для обеспечения абсолютной уверенности.
+            </p>
+        </section>
 
-            <div class="bento-card span-3" style="border-left: 4px solid var(--accent-gold);">
-                <div style="display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start;">
+        <!-- НАВИГАЦИОННЫЕ ВКЛАДКИ -->
+        <nav class="tabs-nav" aria-label="Разделы страницы">
+            <button class="tab-btn active" onclick="switchTab(event, 'tab-calc')">📊 Скрининг уязвимости и выбор тарифа</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-facts')">🏢 Территориальные модули и районы</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-recipes')">📜 Регламент АльфаСтрахования и гарантии</button>
+        </nav>
+
+        <!-- ТАБ 1: ИНТЕРАКТИВНЫЙ БЕНТО-КАЛЬКУЛЯТОР -->
+        <div id="tab-calc" class="tab-content active">
+            <div class="bento-grid" id="bento">
+                
+                <div class="bento-card span-2">
                     <div>
-                        <h3 class="serif" style="font-size: 22px; margin-bottom: 10px;">Математическая прагматика: Почему 8 рублей в день полностью закрывают фоновую тревогу за имущество</h3>
-                        <p style="font-size: 14px; color: var(--text-dim); line-height: 1.6;">
-                            Отказ от профессионального сопровождения рисков — это не экономия, а готовность нести колоссальные финансовые издержки в случае непредвиденных техногенных инцидентов. Годовая программа «АльфаЗАЩИТА от беспилотников» стоимостью от 1 000 до 3 000 рублей окупается в одно мгновение. За эти символические деньги вы полностью перекладываете риски восстановления несущих стен, панорамного остекления, дорогостоящей дизайнерской отделки и техники на капитал топ-10 страховых компаний России. Больше нет необходимости прокручивать в голове гипотетические сценарии при чтении новостей Московского региона. Вы приобретаете кристально чистый инструмент личной безопасности и непоколебимое спокойствие, пока ваша семья находится дома, на работе или в отъезде. Личный аудит от Артема Туркова гарантирует точное ручное сопровождение каждого договора без агентских наценок и скрытых комиссий.
+                        <div class="calc-group">
+                            <label class="calc-label">1. Выберите категорию вашей жилой недвижимости в Московском регионе:</label>
+                            <div class="radio-box-group">
+                                <label class="radio-tile" onclick="selectTile(this)">
+                                    <input type="radio" name="property_type" value="high_apartment" checked>
+                                    <span class="radio-tile-title">Квартира на верхних этажах (10+)</span>
+                                    <span class="radio-tile-desc">Современные высотные жилые комплексы Москвы и городов-спутников. Повышенная визуальная открытость.</span>
+                                </label>
+                                <label class="radio-tile" onclick="selectTile(this)">
+                                    <input type="radio" name="property_type" value="low_apartment">
+                                    <span class="radio-tile-title">Квартира на этажах 1-9</span>
+                                    <span class="radio-tile-desc">Типовая городская квартальная застройка в черте МКАД и жилые микрорайоны Подмосковья.</span>
+                                </label>
+                                <label class="radio-tile" onclick="selectTile(this)">
+                                    <input type="radio" name="property_type" value="private_house">
+                                    <span class="radio-tile-title">Частный дом / Коттедж</span>
+                                    <span class="radio-tile-desc">Загородные домовладения, коттеджные поселки и индивидуальные строения в Московской области.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="calc-group">
+                            <label class="calc-label">2. Какова плотность инфраструктуры и специфика расположения района?</label>
+                            <div class="radio-box-group">
+                                <label class="radio-tile" onclick="selectTile(this)">
+                                    <input type="radio" name="location_density" value="dense_hub" checked>
+                                    <span class="radio-tile-title">Высокая плотность / Близость к узлам</span>
+                                    <span class="radio-tile-desc">Расположение вблизи крупных логистических центров, ТЛЦ, магистралей или важных административных зон.</span>
+                                </label>
+                                <label class="radio-tile" onclick="selectTile(this)">
+                                    <input type="radio" name="location_density" value="suburb_zone">
+                                    <span class="radio-tile-title">Умеренная плотность / Пригород</span>
+                                    <span class="radio-tile-desc">Классические спальные кварталы, удаленные коттеджные застройки и дачные направления.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="calc-group">
+                            <label class="calc-label">3. Укажите режим эксплуатации и присутствия собственников на объекте:</label>
+                            <div class="radio-box-group">
+                                <label class="radio-tile" onclick="selectTile(this)">
+                                    <input type="radio" name="occupancy_mode" value="remote_leave" checked>
+                                    <span class="radio-tile-title">Периодическое отсутствие</span>
+                                    <span class="radio-tile-desc">Имущество часто остается без присмотра из-за частых командировок, путешествий или отпусков.</span>
+                                </label>
+                                <label class="radio-tile" onclick="selectTile(this)">
+                                    <input type="radio" name="occupancy_mode" value="always_home">
+                                    <span class="radio-tile-title">Постоянное проживание</span>
+                                    <span class="radio-tile-desc">Собственники находятся на объекте непрерывно (дистанционная работа, постоянное ведение хозяйства).</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="calc-group">
+                            <label class="calc-label">4. Желаемый объем финансового покрытия ущерба (конструктив, отделка, вещи):</label>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+                                <span style="font-size: 13px; color: var(--text-muted);">Параметры модуля «АльфаЗАЩИТА»:</span>
+                                <span id="range-sit-val" class="range-val">Расчет...</span>
+                            </div>
+                            <input type="range" id="sit_slider" class="range-slider" min="0" max="2" value="2" step="1" oninput="calculateNeckIndex(false)">
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px; display: flex; justify-content: flex-end;">
+                        <button class="btn-reset" onclick="resetCalculator()">Сбросить параметры теста</button>
+                    </div>
+                </div>
+
+                <!-- СПРАВА: ДИНАМИЧЕСКИЙ АНАЛИЗ И КНОПКИ ОФОРМЛЕНИЯ -->
+                <div class="bento-card result-score-box">
+                    <div style="width: 100%;">
+                        <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 800; color: var(--text-muted); margin-bottom: 6px;">Анализ уязвимости и расчет:</div>
+                        <div id="calc-result-title" class="score-number">Защитный модуль не сформирован</div>
+                        <div id="calc-status" class="score-status">...</div>
+                        
+                        <!-- БЛОК ДИНАМИЧЕСКОГО ОПИСАНИЯ ВЫБОРА КЛИЕНТА -->
+                        <div id="client-choice-analysis" style="font-size: 13px; color: var(--accent-color); margin-top: 20px; font-weight: 700; border-left: 2px solid var(--accent-color); padding-left: 10px;">
+                            Анализ факторов...
+                        </div>
+
+                        <p id="calc-text" style="font-size: 13px; color: var(--text-muted); margin-top: 15px; line-height: 1.5; padding-bottom: 24px;">
+                            Загрузка данных...
                         </p>
                     </div>
-                    <div style="background: var(--elem-bg); padding: 15px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-gold)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    
+                    <div style="width: 100%; display: flex; flex-direction: column; gap: 12px; margin-top: auto;">
+                        <a href="https://widget.alfastrah.ru/uav-widget-ui?widget_uuid=4727c2d8-f062-4c7a-a931-4157a2fa0d1d" target="_blank" class="btn-marketing" style="background: linear-gradient(135deg, var(--accent-color), #b34a00);">САМОСТОЯТЕЛЬНОЕ ОФОРМЛЕНИЕ ПОЛИСА АЛЬФАЗАЩИТА</a>
+                        <a href="https://vk.com/im/convo/380478430?entrypoint=list_all" target="_blank" class="btn-marketing" style="background: var(--surface-hover); border: 1px solid var(--accent-color); color: var(--text-main);">ЛИЧНЫЙ АУДИТ РИСКОВ ЧЕРЕЗ ВК</a>
+                    </div>
+                </div>
+
+                <div class="bento-card span-3" style="border-left: 4px solid var(--accent-color);">
+                    <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 12px;">Прагматичный расчет ценности: Защита главного актива от непредвиденных издержек</h3>
+                    <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6;">
+                        Отказ от профессионального сопровождения рисков — это не экономия, а готовность нести колоссальные финансовые издержки в случае внезапных внешних инцидентов. Годовая программа «АльфаЗАЩИТА от беспилотников» стоимостью от 1 000 до 3 000 рублей окупается в одно мгновение. За эти символические деньги вы полностью перекладываете риски восстановления несущих стен, панорамного остекления, дорогостоящей дизайнерской отделки и техники на капитал топ-10 страховых компаний России. Больше нет необходимости прокручивать в голове гипотетические сценарии при чтении новостей Московского региона. Вы приобретаете кристально чистый инструмент личной безопасности и полное ментальное спокойствие, пока ваша семья находится дома, на работе или в отъезде. Личный аудит от Артема Туркова гарантирует точное ручное сопровождение каждого дела без агентских наценок и скрытых комиссий.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ТАБ 2: ГЕОГРАФИЧЕСКИЕ СЕО-МОДУЛИ РАЙОНОВ МОСКВЫ И МО -->
+        <div id="tab-facts" class="tab-content">
+            <div class="bento-grid">
+                <div class="bento-card span-3" style="background: rgba(255,255,255,0.01); border-left: 4px solid var(--accent-color);">
+                    <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 8px;">Доступность программ страхования недвижимости от рисков БПЛА по районам</h3>
+                    <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+                        Специализированная программа «АльфаЗАЩИТА» развернута в полном объеме на территории всего столичного региона. Наличие индивидуального ручного андеррайтинга позволяет оформлять договоры как для плотной городской черты Москвы, так и для загородных объектов Подмосковья:
+                    </p>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <div class="fact-num">01</div>
+                        <h3 class="fact-title">Оформление в г. Химки</h3>
+                        <p class="fact-desc">Полное покрытие рисков для жилых комплексов и коммерческих активов в Химках и прилегающих микрорайонах Северо-Западного направления МО.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <div class="fact-num">02</div>
+                        <h3 class="fact-title">Защита в г. Одинцово</h3>
+                        <p class="fact-desc">Индивидуальный расчет для квартир и элитных загородных домовладений в Одинцово, Барвихе и по всему Рублево-Успенскому шоссе.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <div class="fact-num">03</div>
+                        <h3 class="fact-title">Ведение договоров в г. Красногорск</h3>
+                        <p class="fact-desc">Оптимизация стоимости полисов защиты имущества от БПЛА для собственников недвижимости в Красногорске, Павшинской Пойме и Нахабино.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <div class="fact-num">04</div>
+                        <h3 class="fact-title">Страхование в г. Мытищи</h3>
+                        <p class="fact-desc">Комплексный учет техногенных рисков и оформление официальных договоров для жилого сектора городского округа Мытищи и Королева.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <div class="fact-num">05</div>
+                        <h3 class="fact-title">Аудит в Новой Москве (ТиНАО)</h3>
+                        <p class="fact-desc">Специальные условия и расширенные лимиты компенсаций для новых развивающихся жилых кварталов Троицкого и Новомосковского округов.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <div class="fact-num">06</div>
+                        <h3 class="fact-title">Сопровождение в г. Подольск</h3>
+                        <p class="fact-desc">Доступность тарифов и быстрый запуск программ урегулирования убытков в Подольске, Щербинке, Климовске и на Южном направлении региона.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <div class="fact-num">07</div>
+                        <h3 class="fact-title">Договоры в г. Люберцы</h3>
+                        <p class="fact-desc">Обеспечение финансовой безопасности квартир и апартаментов в Люберцах, Котельниках, Дзержинском и по всему Юго-Восточному вектору.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <div class="fact-num">08</div>
+                        <h3 class="fact-title">Расчет в г. Балашиха</h3>
+                        <p class="fact-desc">Параметрический подбор тарифов защиты конструктива и внутренней отделки для собственников жилья в Балашихе, Реутове и Железнодорожном.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <div class="fact-num">09</div>
+                        <h3 class="fact-title">Загородный сектор г. Истра</h3>
+                        <p class="fact-desc">Особый регламент защиты для крупных загородных резиденций, коттеджей и сопутствующих строений вдоль Новорижского шоссе в Истринском районе.</p>
+                    </div>
+                </div>
+
+                <div class="bento-card">
+                    <div>
+                        <div class="fact-num">10</div>
+                        <h3 class="fact-title">Раменский городской округ</h3>
+                        <p class="fact-desc">Официальное страхование жилого фонда, загородной недвижимости и частного сектора в Раменском, Жуковском и Бронницах.</p>
                     </div>
                 </div>
             </div>
-
-            <div class="bento-card span-3" style="background: var(--elem-bg); padding: 40px 30px; text-align: center;">
-                <h3 class="serif" style="font-size: 24px; margin-bottom: 10px;">Активируйте надежный щит для вашей недвижимости прямо сейчас</h3>
-                <p style="font-size: 14px; color: var(--text-dim); max-width: 700px; margin: 0 auto 25px;">
-                    Передайте сформированные параметры вашего объекта напрямую эксперту. Получите индивидуальный аудит действующих полисов и мгновенное оформление официального договора страхования.
-                </p>
-                <div style="max-width: 450px; margin: 0 auto;">
-                    <a href="https://vk.com/im/convo/380478430?entrypoint=list_all" target="_blank" class="btn-marketing btn-online-gold" onclick="handleDirectVKLink(event)">Оформить полис АльфаЗАЩИТА через ВКонтакте</a>
-                </div>
-            </div>
-
         </div>
-    </div>
 
-    <!-- СОДЕРЖИМОЕ ВКЛАДКИ 2: ГЕОГРАФИЧЕСКИЕ СЕО-МОДУЛИ РАЙОНОВ МОСКВЫ И МО -->
-    <div id="tab-facts" class="tab-content">
-        <div class="bento-grid">
-            
-            <div class="bento-card span-3" style="background: linear-gradient(135deg, rgba(179, 134, 57, 0.05), transparent); border-left: 4px solid var(--accent-gold);">
-                <h3 class="serif" style="font-size: 22px; margin-bottom: 10px;">Доступность программ страхования недвижимости от рисков БПЛА по районам</h3>
-                <p style="font-size: 14px; color: var(--text-dim); line-height: 1.6;">
-                    Специализированная программа «АльфаЗАЩИТА» развернута в полном объеме на территории всего столичного региона. Наличие индивидуального ручного андеррайтинга позволяет оформлять договоры как для плотной городской черты Москвы, так и для загородных объектов Подмосковья:
-                </p>
-            </div>
-
-            <div class="bento-card">
-                <div>
-                    <div class="fact-num">01</div>
-                    <h3 class="fact-title">Оформление в г. Химки</h3>
-                    <p class="fact-desc">Полное покрытие рисков для жилых комплексов и коммерческих активов в Химках и прилегающих микрорайонах Северо-Западного направления МО.</p>
+        <!-- ТАБ 3: ЮРИДИЧЕСКИЙ РЕГЛАМЕНТ И УСЛОВИЯ АЛЬФАСТРАХОВАНИЯ -->
+        <div id="tab-recipes" class="tab-content">
+            <div class="bento-grid">
+                <div class="bento-card span-2">
+                    <div>
+                        <span class="recipe-badge">Регламент 01</span>
+                        <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 8px;">Исключение скрытых франшиз и неявных ограничений</h3>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+                            При ручном формировании договора Артем Турков исключает из правил АльфаСтрахования неявные сноски и скрытые внутренние лимиты. Ваше имущество защищается по честной рыночной стоимости. Компенсация выплачивается в полном объеме, покрывая реальные расходы на восстановление без скрытых удержаний со стороны компании.
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="bento-card">
-                <div>
-                    <div class="fact-num">02</div>
-                    <h3 class="fact-title">Защита в г. Одинцово</h3>
-                    <p class="fact-desc">Индивидуальный расчет для квартир и элитных загородных домовладений в Одинцово, Барвихе и по всему Рублево-Успенскому шоссе.</p>
+                <div class="bento-card">
+                    <div>
+                        <span class="recipe-badge">Регламент 02</span>
+                        <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 8px;">Четкий перечень покрываемых объектов ущерба</h3>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+                            Программа АльфаЗАЩИТА четко фиксирует перечень объектов урегулирования. Финансовой компенсации подлежат: несущие конструктивные элементы, внешние стены, крыша, оконные блоки и панорамное остекление, внутренняя отделка комнат, инженерные коммуникации, а также движимое имущество (мебель, бытовая техника, электроника).
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="bento-card">
-                <div>
-                    <div class="fact-num">03</div>
-                    <h3 class="fact-title">Ведение договоров в г. Красногорск</h3>
-                    <p class="fact-desc">Оптимизация стоимости полисов защиты имущества от БПЛА для собственников недвижимости в Красногорске, Павшинской Пойме и Нахабино.</p>
+                <div class="bento-card">
+                    <div>
+                        <span class="recipe-badge">Регламент 03</span>
+                        <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 8px;">Официальный статус и законность выплат</h3>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+                            Риск падения беспилотных аппаратов (БПЛА) и их обломков официально включен в страховое покрытие. Выплаты не могут быть заблокированы под предлогом форс-мажорных обстоятельств или военных действий — договор классифицирует данное событие как классический противоправный ущерб третьих лиц или техногенный инцидент.
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="bento-card">
-                <div>
-                    <div class="fact-num">04</div>
-                    <h3 class="fact-title">Страхование в г. Мытищи</h3>
-                    <p class="fact-desc">Комплексный учет техногенных рисков и оформление официальных договоров для жилого сектора городского округа Мытищи и Королева.</p>
+                <div class="bento-card span-2">
+                    <div>
+                        <span class="recipe-badge">Регламент 04</span>
+                        <h3 style="font-size: 16px; font-weight: 800; margin-bottom: 8px;">Оперативное сопровождение при наступлении страхового случая</h3>
+                        <p style="font-size: 13px; color: var(--text-muted); line-height: 1.6;">
+                            Главное преимущество работы с независимым финансовым консультантом — это отсутствие бюрократического давления при получении выплат. В случае фиксации ущерба Артем Турков лично берет на себя координацию процессов с отделом убытков АльфаСтрахования. Сбор документов, выезд эксперта-оценщика и калькуляция сметы на ремонт происходят по ускоренному закрытому регламенту, гарантируя оперативный перевод денежных средств на ваш расчетный счет.
+                        </p>
+                    </div>
                 </div>
-            </div>
 
-            <div class="bento-card">
-                <div>
-                    <div class="fact-num">05</div>
-                    <h3 class="fact-title">Аудит в Новой Москве (ТиНАО)</h3>
-                    <p class="fact-desc">Специальные условия и расширенные лимиты компенсаций для новых развивающихся жилых кварталов Троицкого и Новомосковского округов.</p>
+                <div class="bento-card span-3" style="background: rgba(255,255,255,0.01); border: 1px solid var(--accent-color);">
+                    <div>
+                        <span class="recipe-badge">Разъяснение от Артема Туркова</span>
+                        <h3 style="font-size: 22px; font-weight: 800; margin-bottom: 12px;">«Ваша безопасность — это выверенный алгоритм, исключающий случайности...»</h3>
+                        <p style="font-size: 14px; line-height: 1.7; color: var(--text-muted); margin-bottom: 20px;">
+                            «Уважаемые собственники недвижимости в Москве и Московской области! Фоновая тревога за сохранность жилья, возникающая при чтении новостных лент — это не то состояние, с которым нужно мириться. Имущественные риски в современном мегаполисе полностью управляемы. Программа АльфаЗАЩИТА создана не для того, чтобы пугать, а для того, чтобы дать вам четкую, юридически безупречную гарантию сохранения капитала. Обычные страховые агенты часто продают базовые бланки, где падение БПЛА скрыто в пунктах исключений. Моя задача как финансового консультанта — провести профессиональный аудит вашего договора, убрать ненужные наценки и гарантировать, что при любом внешнем инциденте страховая компания полностью восстановит вашу квартиру или дом до первоначального состояния. Передайте управление рисками профессионалам АльфаСтрахования, оцифруйте параметры вашего объекта через наш калькулятор и верните себе абсолютную уверенность в безопасности вашего семейного очага!»
+                        </p>
+                    </div>
+                    <div style="max-width: 450px; margin: 0 auto; width: 100%;">
+                        <a href="https://vk.com/im/convo/380478430?entrypoint=list_all" target="_blank" class="btn-marketing">Связаться с экспертом в ВКонтакте</a>
+                    </div>
                 </div>
-            </div>
-
-            <div class="bento-card">
-                <div>
-                    <div class="fact-num">06</div>
-                    <h3 class="fact-title">Сопровождение в г. Подольск</h3>
-                    <p class="fact-desc">Доступность тарифов и быстрый запуск программ урегулирования убытков в Подольске, Щербинке, Климовске и на Южном направлении региона.</p>
-                </div>
-            </div>
-
-            <div class="bento-card">
-                <div>
-                    <div class="fact-num">07</div>
-                    <h3 class="fact-title">Договоры в г. Люберцы</h3>
-                    <p class="fact-desc">Обеспечение финансовой безопасности квартир и апартаментов в Люберцах, Котельниках, Дзержинском и по всему Юго-Восточному вектору.</p>
-                </div>
-            </div>
-
-            <div class="bento-card">
-                <div>
-                    <div class="fact-num">08</div>
-                    <h3 class="fact-title">Расчет в г. Балашиха</h3>
-                    <p class="fact-desc">Параметрический подбор тарифов защиты конструктива и внутренней отделки для собственников жилья в Балашихе, Реутове и Железнодорожном.</p>
-                </div>
-            </div>
-
-            <div class="bento-card">
-                <div>
-                    <div class="fact-num">09</div>
-                    <h3 class="fact-title">Загородный сектор г. Истра</h3>
-                    <p class="fact-desc">Особый регламент защиты для крупных загородных резиденций, коттеджей и сопутствующих строений вдоль Новорижского шоссе в Истринском районе.</p>
-                </div>
-            </div>
-
-            <div class="bento-card">
-                <div>
-                    <div class="fact-num">10</div>
-                    <h3 class="fact-title">Раменский городской округ</h3>
-                    <p class="fact-desc">Официальное страхование жилого фонда, загородной недвижимости и частного сектора в Раменском, Жуковском и Бронницах.</p>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- СОДЕРЖИМОЕ ВКЛАДКИ 3: ЮРИДИЧЕСКИЙ РЕГЛАМЕНТ И ПРАВИЛА ВЫПЛАТ -->
-    <div id="tab-recipes" class="tab-content">
-        <div class="bento-grid">
-            
-            <div class="bento-card span-2">
-                <div>
-                    <span class="recipe-badge">Правило 01</span>
-                    <h3 class="serif" style="font-size: 22px; margin-bottom: 12px; color: var(--text-main);">Исключение скрытых франшиз и неявных ограничений</h3>
-                    <p style="font-size: 14px; color: var(--text-dim); line-height: 1.6;">
-                        При ручном формировании договора Артем Турков исключает из правил АльфаСтрахования неявные сноски и скрытые внутренние лимиты. Ваше имущество защищается по честной рыночной стоимости. Компенсация выплачивается в полном объеме, покрывая реальные расходы на восстановление без скрытых удержаний со стороны компании.
-                    </p>
-                </div>
-            </div>
-
-            <div class="bento-card">
-                <div>
-                    <span class="recipe-badge">Правило 02</span>
-                    <h3 class="serif" style="font-size: 22px; margin-bottom: 12px; color: var(--text-main);">Четкий перечень покрываемых объектов ущерба</h3>
-                    <p style="font-size: 14px; color: var(--text-dim); line-height: 1.6;">
-                        Программа АльфаЗАЩИТА четко фиксирует перечень объектов урегулирования. Финансовой компенсации подлежат: несущие конструктивные элементы, внешние стены, крыша, оконные блоки и панорамное остекление, внутренняя отделка комнат, инженерные коммуникации, а также движимое имущество (мебель, бытовая техника, электроника).
-                    </p>
-                </div>
-            </div>
-
-            <div class="bento-card">
-                <div>
-                    <span class="recipe-badge">Правило 03</span>
-                    <h3 class="serif" style="font-size: 22px; margin-bottom: 12px; color: var(--text-main);">Официальный статус и законность выплат</h3>
-                    <p style="font-size: 14px; color: var(--text-dim); line-height: 1.6;">
-                        Риск падения беспилотных аппаратов (БПЛА) и их обломков официально включен в страховое покрытие. Выплаты не могут быть заблокированы под предлогом форс-мажорных обстоятельств или военных действий — договор классифицирует данное событие как классический противоправный ущерб третьих лиц или техногенный инцидент.
-                    </p>
-                </div>
-            </div>
-
-            <div class="bento-card span-2">
-                <div>
-                    <span class="recipe-badge">Правило 04</span>
-                    <h3 class="serif" style="font-size: 22px; margin-bottom: 12px; color: var(--text-main);">Оперативное сопровождение при наступлении страхового случая</h3>
-                    <p style="font-size: 14px; color: var(--text-dim); line-height: 1.6;">
-                        Главное преимущество работы с независимым финансовым консультантом — это отсутствие бюрократического давления при получении выплат. В случае фиксации ущерба Артем Турков лично берет на себя координацию процессов с отделом убытков АльфаСтрахования. Сбор документов, выезд эксперта-оценщика и калькуляция сметы на ремонт происходят по ускоренному закрытому регламенту, гарантируя оперативный перевод денежных средств на ваш расчетный счет.
-                    </p>
-                </div>
-            </div>
-
-            <div class="bento-card span-3" style="background: linear-gradient(135deg, rgba(255,106,0,0.12), transparent); border: 2px solid var(--accent-orange);">
-                <div>
-                    <span class="recipe-badge">Разъяснение от Артема Туркова</span>
-                    <h3 class="serif" style="font-size: 26px; margin-bottom: 15px; color: var(--text-main);">«Ваша безопасность — это выверенный алгоритм, исключающий случайности...»</h3>
-                    <p style="font-size: 15px; line-height: 1.7; color: var(--text-main); margin-bottom: 25px;">
-                        «Уважаемые собственники недвижимости в Москве и Московской области! Фоновая тревога за сохранность жилья, возникающая при чтении новостных лент — это не то состояние, с которым нужно мириться. Имущественные риски в современном мегаполисе полностью управляемы. Программа АльфаЗАЩИТА создана не для того, чтобы пугать, а для того, чтобы дать вам четкую, юридически безупречную гарантию сохранения капитала. Обычные страховые агенты часто продают базовые бланки, где падение БПЛА скрыто в пунктах исключений. Моя задача как финансового консультанта — провести профессиональный аудит вашего договора, убрать ненужные наценки и гарантировать, что при любом внешнем инциденте страховая компания полностью восстановит вашу квартиру или дом до первоначального состояния. Передайте управление рисками профессионалам АльфаСтрахования, оцифруйте параметры вашего объекта через наш калькулятор и верните себе абсолютную уверенность в безопасности вашего семейного очага!»
-                    </p>
-                </div>
-                <div style="max-width: 450px; margin: 0 auto;">
-                    <a href="https://vk.com/im/convo/380478430?entrypoint=list_all" target="_blank" class="btn-marketing btn-online-gold" onclick="handleDirectVKLink(event)">Связаться с экспертом в ВКонтакте</a>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- ДОПОЛНИТЕЛЬНЫЙ ЭКСПЕРТНЫЙ БЛОК ПРОТИВ КАНЦЕЛЯРИЗМОВ И НЕВЕЖЕСТВА -->
-    <section class="bento-grid" style="margin-top: 20px;">
-        <div class="bento-card span-3" style="background: linear-gradient(135deg, rgba(11, 12, 16, 0.95), rgba(26, 26, 36, 0.8)); border-top: 3px solid var(--accent-orange); box-shadow: 0 10px 30px rgba(255, 106, 0, 0.05);">
-            <div style="display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start; margin-bottom: 20px;">
-                <div>
-                    <span class="recipe-badge" style="background: var(--accent-gold) !important;">Анализ и факты</span>
-                    <h2 class="serif" style="font-size: clamp(22px, 3vw, 28px); margin-bottom: 12px; line-height: 1.3;">Профессиональный разбор страховых стратегий: Читайте наш Экспертный Журнал</h2>
-                    <p style="font-size: 14px; color: var(--text-dim); line-height: 1.6; max-width: 900px;">
-                        Мы формируем не просто одностраничные сайты, а полноценную прикладную базу знаний для защиты ваших финансовых интересов. В Экспертном Журнале Артема Туркова мы безжалостно разбираем сложные юридические формулировки страховых компаний, рушим мифы о дешевых полисах и даем кристально чистый анализ правил урегулирования убытков. Узнайте, как правильно зафиксировать повреждения конструкций, почему выписка из ЕГРН обязательна при оценке, и как защитить коммерческую недвижимость от скрытых ограничений по договорам. Каждый материал — это чистый концентрат пользы мирового уровня для собственников, которые ценят точность, прагматизм и готовы менять качество своей безопасности к лучшему.
-                    </p>
-                </div>
-                <div style="background: rgba(255, 106, 0, 0.1); padding: 15px; border-radius: 16px; display: flex; align-items: center; justify-content: center;">
-                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-orange)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/><path d="M6 6h10M6 10h10"/></svg>
-                </div>
-            </div>
-            <div style="max-width: 450px; margin: 10px auto 0;">
-                <a href="journal.html" class="btn-marketing btn-online-orange">Перейти в журнал: изучить правила и стратегии</a>
             </div>
         </div>
-    </section>
 
-    <!-- ИНТЕРАКТИВНЫЙ БЛОК ШЕРИНГА СТРАНИЦЫ ДЛЯ СОСЕДЕЙ И СЕМЬИ -->
-    <section class="share-section">
-        <h3 class="serif" style="font-size: 22px; margin-bottom: 12px; color: var(--text-main);">🔥 Поделиться калькулятором АльфаЗАЩИТЫ с соседями по ЖК и коллегами!</h3>
-        <p style="font-size: 14px; color: var(--text-dim); margin-bottom: 25px;">Отправьте эту страницу жителям вашего жилого комплекса, коттеджного поселка или коллегам по работе в Москве и Московской области, которые хотят оцифровать риски недвижимости и обеспечить полное спокойствие за свой капитал.</p>
-        <button class="btn-share" onclick="sharePage()">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-            <span id="share-btn-text">Отправить соседям</span>
-        </button>
-    </section>
+        <!-- БЛОК ЛИЧНОЙ КОНСУЛЬТАЦИИ (ВМЕСТО ЖУРНАЛА) -->
+        <section class="bento-grid" style="margin-top: 20px;">
+            <div class="bento-card span-3" style="background: var(--surface-color); border-top: 3px solid var(--accent-color); box-shadow: 0 10px 30px rgba(255, 106, 0, 0.05);">
+                <div style="display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: start; margin-bottom: 20px;">
+                    <div>
+                        <span class="recipe-badge" style="background: var(--accent-color) !important; color: #fff !important;">Личный разбор рисков</span>
+                        <h2 style="font-size: 20px; font-weight: 800; margin-bottom: 12px; line-height: 1.3;">ИНДИВИДУАЛЬНЫЙ АУДИТ СЛОЖНЫХ СТРАХОВЫХ СЛУЧАЕВ ОТ ЭКСПЕРТА</h2>
+                        <p style="font-size: 14px; color: var(--text-muted); line-height: 1.6; max-width: 900px;">
+                            Мы формируем не просто одностраничные сайты, а полноценную прикладную базу знаний для защиты ваших финансовых интересов. Если у вас нестандартный объект недвижимости, коммерческие площади, дорогостоящие апартаменты в Москва-Сити или вы хотите объединить страхование конструктива от БПЛА с классической защитой от залива и пожара — требуется индивидуальный андеррайтинг. Артем Турков безжалостно разбирает сложные юридические формулировки правил страховых компаний, рушит мифы о дешевых полисах и дает кристально чистый анализ правил урегулирования убытков. Вы получите индивидуальные условия защиты вашего капитала без навязанных скрытых комиссий.
+                        </p>
+                    </div>
+                    <div style="background: rgba(255, 106, 0, 0.1); padding: 15px; border-radius: 6px; display: flex; align-items: center; justify-content: center;">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--accent-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z"/><path d="M6 6h10M6 10h10"/></svg>
+                    </div>
+                </div>
+                <div style="max-width: 450px; margin: 10px auto 0; width: 100%;">
+                    <a href="index.html" class="btn-marketing">ЛИЧНАЯ КОНСУЛЬТАЦИЯ: ВЕРНУТЬСЯ НА ГЛАВНУЮ АРТЕМ ТУРКОВ</a>
+                </div>
+            </div>
+        </section>
 
-</main>
+        <!-- ОТПРАВКА ССЫЛКИ СОСЕДЯМ -->
+        <section class="share-section">
+            <h3 style="font-size: 18px; font-weight: 800; margin-bottom: 12px; color: var(--text-main);">🔥 Поделиться калькулятором АльфаЗАЩИТЫ с соседями по ЖК и коллегами!</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 25px;">Отправьте эту страницу жителям вашего жилого комплекса, коттеджного поселка или коллегам по работе в Москве и Московской области, которые хотят оцифровать риски недвижимости и обеспечить полное спокойствие за свой капитал.</p>
+            <button class="btn-share" onclick="sharePage()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                <span id="share-btn-text">Отправить соседям</span>
+            </button>
+        </section>
 
-<footer>
-    <div class="footer-container">
-        <p class="footer-text-main">© 2026 Турков.Страхование | Интерактивный параметрический аудит рисков недвижимости.</p>
-        <p class="footer-text-sub">Интерактивный скрининг параметров защищенности и калькулятор стоимости полисов носят ознакомительный и аналитический характер для предварительного сбора данных. Официальные договоры страхования по программе «АльфаЗАЩИТА от беспилотников» оформляются в строгом соответствии с лицензиями и правилами АО «АльфаСтрахование». Расчеты сумм покрытий (800 000 ₽, 1 700 000 ₽, 2 500 000 ₽) и годовых премий (1 000 ₽, 2 000 ₽, 3 000 ₽) привязаны к утвержденным модулям страховой компании. Перед итоговой фиксацией договора финансовый консультант Артем Турков проводит ручной андеррайтинг параметров объекта.</p>
     </div>
-</footer>
 
-<script>
-    // СКРИПТ УПРАВЛЕНИЯ ЦВЕТОВОЙ СХЕМОЙ (СВЕТ/ТЕНЬ)
-    function toggleTheme() {
-        const html = document.documentElement;
-        const currentTheme = html.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        document.getElementById('themeToggle').innerText = newTheme === 'dark' ? 'СВЕТ' : 'ТЕНЬ';
-    }
+    <footer id="cta">
+        <div class="footer-container container">
+            <p style="font-size: 14px; font-weight: 800; color: var(--text-main);">© 2026 Турков.Страхование | Интерактивный параметрический аудит рисков недвижимости.</p>
+            <p class="footer-text-sub">Интерактивный скрининг параметров защищенности и калькулятор стоимости полисов носят ознакомительный и аналитический характер для предварительного сбора данных. Официальные договоры страхования по программе «АльфаЗАЩИТА от беспилотников» оформляются в строгом соответствии с лицензиями и правилами АО «АльфаСтрахование». Расчеты сумм покрытий (800 000 ₽, 1 700 000 ₽, 2 500 000 ₽) и годовых премий (1 000 ₽, 2 000 ₽, 3 000 ₽) привязаны к утвержденным модулям страховой компании. Перед итоговой фиксацией договора финансовый консультант Артем Турков проводит ручной андеррайтинг параметров объекта.</p>
+        </div>
+    </footer>
 
-    window.addEventListener('DOMContentLoaded', () => {
-        const theme = document.documentElement.getAttribute('data-theme');
-        document.getElementById('themeToggle').innerText = theme === 'dark' ? 'СВЕТ' : 'ТЕНЬ';
-        
-        restoreCalculatorData();
-        calculateNeckIndex();
-    });
-
-    // СКРИПТ ПЕРЕКЛЮЧЕНИЯ НАВИГАЦИОННЫХ ВКЛАДОК (ТАБОВ)
-    function switchTab(event, tabId) {
-        document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
-        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-        
-        document.getElementById(tabId).classList.add('active');
-        event.currentTarget.classList.add('active');
-        
-        window.scrollTo({ top: document.querySelector('.tabs-nav').offsetTop - 80, behavior: 'smooth' });
-    }
-
-    // ЛОГИКА ОБРАБОТКИ ВЫБОРА РАДИО-ПЛИТОК
-    function selectTile(element) {
-        const name = element.querySelector('input').name;
-        document.querySelectorAll(`input[name="${name}"]`).forEach(input => {
-            input.parentElement.classList.remove('selected');
-        });
-        element.classList.add('selected');
-        
-        calculateNeckIndex();
-    }
-
-    // АЛГОРИТМ ИНТЕРАКТИВНОГО РАСЧЕТА ТАРИФНЫХ МОДУЛЕЙ И ФОРМИРОВАНИЯ ТЕКСТА
-    function calculateNeckIndex() {
-        const propType = document.querySelector('input[name="property_type"]:checked').value;
-        const density = document.querySelector('input[name="location_density"]:checked').value;
-        const occupancy = document.querySelector('input[name="occupancy_mode"]:checked').value;
-        const sliderPos = parseInt(document.getElementById('sit_slider').value);
-
-        const coverValues = ['800 000 ₽ (Премия 1 000 ₽/год)', '1 700 000 ₽ (Премия 2 000 ₽/год)', '2 500 000 ₽ (Премия 3 000 ₽/год)'];
-        document.getElementById('range-sit-val').innerText = coverValues[sliderPos];
-
-        const titleEl = document.getElementById('calc-result-title');
-        const statusEl = document.getElementById('calc-status');
-        const textEl = document.getElementById('calc-text');
-
-        let bodyText = "";
-
-        if (sliderPos === 0) {
-            titleEl.innerText = "Модуль: АльфаЗАЩИТА — Стандарт";
-            statusEl.innerText = "Финансовое покрытие: 800 000 ₽";
-            statusEl.style.color = "var(--accent-gold)";
-            bodyText = "Оптимальный стартовый уровень защиты вашего имущества по тарифу 1 000 рублей в год. Покрывает ущерб движимого имущества (200 тыс. ₽) и конструктивных элементов (800 тыс. ₽). Рекомендован для квартир на средних этажах или небольших подмосковных объектов с постоянным режимом проживания.";
-        } else if (sliderPos === 1) {
-            titleEl.innerText = "Модуль: АльфаЗАЩИТА — Бизнес";
-            statusEl.innerText = "Финансовое покрытие: 1 700 000 ₽";
-            statusEl.style.color = "var(--accent-orange)";
-            bodyText = "Наиболее востребованный тарифный пакет стоимостью 2 000 рублей в год. Рекомендуется для высотных квартир столичного региона и загородных коттеджей. Обеспечивает компенсацию стоимости ремонта, отделочных материалов (до 1.7 млн ₽) и порчи находящейся на объекте бытовой техники (300 тыс. ₽). Полностью ликвидирует фоновую тревогу во время отпусков.";
-        } else {
-            titleEl.innerText = "Модуль: АльфаЗАЩИТА — Максимум";
-            statusEl.innerText = "Финансовое покрытие: 2 500 000 ₽";
-            statusEl.style.color = "var(--accent-berry)";
-            bodyText = "Усиленный премиальный страховой барьер стоимостью 3 000 рублей в год для объектов с дорогостоящим дизайнерским ремонтом, панорамным остеклением и ценной мебелью. Лимит выплат расширен до 2.5 млн рублей на конструктив и отделку, и до 500 тыс. рублей на движимые вещи. Полное личное ведение дел Артемом Турковым при убытках.";
+    <script>
+        function toggleThemePopup() {
+            document.getElementById('themePopup').classList.toggle('show');
         }
 
-        textEl.innerText = bodyText;
+        window.addEventListener('click', function(e) {
+            if (!document.querySelector('.theme-selector-trigger').contains(e.target) && !document.getElementById('themePopup').contains(e.target)) {
+                document.getElementById('themePopup').classList.remove('remove');
+                document.getElementById('themePopup').classList.remove('show');
+            }
+        });
 
-        const scoreBox = document.querySelector('.result-score-box');
-        scoreBox.style.transform = 'scale(1.02)';
-        setTimeout(() => { scoreBox.style.transform = 'scale(1)'; }, 150);
+        function setTheme(theme) {
+            const root = document.documentElement;
+            localStorage.setItem('user-theme', theme);
+            document.getElementById('themePopup').classList.remove('show');
 
-        const calcData = { propType, density, occupancy, sliderPos };
-        localStorage.setItem('uav_insurance_data', JSON.stringify(calcData));
-    }
-
-    // СБРОС И ОЧИСТКА ДАННЫХ КАЛЬКУЛЯТОРА
-    function resetCalculator() {
-        document.querySelectorAll('input[name="property_type"]')[0].checked = true;
-        document.querySelectorAll('input[name="location_density"]')[0].checked = true;
-        document.querySelectorAll('input[name="occupancy_mode"]')[0].checked = true;
-        document.getElementById('sit_slider').value = 1;
-
-        document.querySelectorAll('.radio-tile').forEach(tile => tile.classList.remove('selected'));
-        document.querySelectorAll('input[name="property_type"]')[0].parentElement.classList.add('selected');
-        document.querySelectorAll('input[name="location_density"]')[0].parentElement.classList.add('selected');
-        document.querySelectorAll('input[name="occupancy_mode"]')[0].parentElement.classList.add('selected');
-
-        localStorage.removeItem('uav_insurance_data');
-        calculateNeckIndex();
-    }
-
-    // ВОССТАНОВЛЕНИЕ СОХРАНЕННЫХ ПАРАМЕТРОВ ПОЛЬЗОВАТЕЛЯ ИЗ ЛОКАЛЬНОЙ ПАМЯТИ
-    function restoreCalculatorData() {
-        const saved = localStorage.getItem('uav_insurance_data');
-        if (saved) {
-            try {
-                const data = JSON.parse(saved);
-                document.querySelectorAll(`input[name="property_type"]`).forEach(i => { if(i.value === data.propType) i.checked = true; });
-                document.querySelectorAll(`input[name="location_density"]`).forEach(i => { if(i.value === data.density) i.checked = true; });
-                document.querySelectorAll(`input[name="occupancy_mode"]`).forEach(i => { if(i.value === data.occupancy) i.checked = true; });
-                document.getElementById('sit_slider').value = data.sliderPos;
-            } catch (e) {
-                console.log("Ошибка синхронизации данных буфера");
+            if (theme === 'auto') {
+                applyAutoTheme();
+            } else {
+                root.setAttribute('data-theme', theme);
             }
         }
 
-        document.querySelectorAll('.radio-tile').forEach(tile => {
-            if (tile.querySelector('input').checked) tile.classList.add('selected');
-        });
-    }
-
-    // ФУНКЦИЯ ИНТЕРАКТИВНОГО ШЕРИНГА (ОТПРАВКИ ССЫЛКИ СТРАНИЦЫ)
-    async function sharePage() {
-        const shareData = {
-            title: 'Пройди экспресс-тест уязвимости имущества и рассчитай защиту от БПЛА!',
-            text: 'Я проверила параметры безопасности своей квартиры на интерактивном калькуляторе АльфаЗАЩИТА. Узнай оптимальный тариф для своего района!',
-            url: window.location.href
-        };
-        const btnText = document.getElementById('share-btn-text');
-        if (navigator.share) {
-            try { await navigator.share(shareData); } catch (err) { console.log('Шеринг отменен'); }
-        } else {
-            try {
-                await navigator.clipboard.writeText(window.location.href);
-                btnText.innerText = 'Ссылка скопирована!';
-                setTimeout(() => { btnText.innerText = 'Отправить соседям'; }, 3000);
-            } catch (err) {
-                alert('Скопируйте адрес страницы вручную.');
+        function applyAutoTheme() {
+            const root = document.documentElement;
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+                root.setAttribute('data-theme', 'light');
+            } else {
+                root.removeAttribute('data-theme');
             }
         }
-    }
 
-    // ДИНАМИЧЕСКИЙ ЭФФЕКТ ШАПКИ ПРИ СКРОЛЛЕ
-    window.addEventListener('scroll', () => {
-        const header = document.getElementById('header');
-        if (window.scrollY > 30) header.classList.add('scrolled');
-        else header.classList.remove('scrolled');
-    });
+        const savedTheme = localStorage.getItem('user-theme') || 'auto';
+        if (savedTheme === 'auto') {
+            applyAutoTheme();
+        } else {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        }
 
-    function handleDirectVKLink(event) {
-        // Позволяем ссылке открыться в новой вкладке стандартно
-    }
-</script>
+        function switchTab(event, tabId) {
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
 
+        // УМНЫЙ ПЕРЕХВАТ КЛИКОВ ПО ПЛИТКАМ И УПРАВЛЕНИЕ ПОЛЗУНКОМ
+        function selectTile(element) {
+            const name = element.querySelector('input').name;
+            document.querySelectorAll(`input[name="${name}"]`).forEach(input => {
+                input.parentElement.classList.remove('selected');
+            });
+            element.classList.add('selected');
+            element.querySelector('input').checked = true;
+            
+            // Если выбран высокий риск — автоматически сдвигаем ползунок на максимум
+            const propType = document.querySelector('input[name="property_type"]:checked').value;
+            const density = document.querySelector('input[name="location_density"]:checked').value;
+            
+            if (name === 'property_type' || name === 'location_density') {
+                if (propType === 'high_apartment' || density === 'dense_hub') {
+                    document.getElementById('sit_slider').value = 2; // Модуль Максимум
+                } else if (propType === 'private_house') {
+                    document.getElementById('sit_slider').value = 1; // Модуль Бизнес
+                }
+            }
+            
+            calculateNeckIndex(true);
+        }
+
+        // ДИНАМИЧЕСКИЙ РАСЧЕТ И ВЫВОД РЕЗУЛЬТАТОВ ОБРАБОТКИ ВЫБОРА КЛИЕНТА
+        function calculateNeckIndex(isFromTile = false) {
+            const propType = document.querySelector('input[name="property_type"]:checked').value;
+            const density = document.querySelector('input[name="location_density"]:checked').value;
+            const occupancy = document.querySelector('input[name="occupancy_mode"]:checked').value;
+            const sliderPos = parseInt(document.getElementById('sit_slider').value);
+
+            const coverValues = ['800 000 ₽ (Премия 1 000 ₽/год)', '1 700 000 ₽ (Премия 2 000 ₽/год)', '2 500 000 ₽ (Премия 3 000 ₽/год)'];
+            document.getElementById('range-sit-val').innerText = coverValues[sliderPos];
+
+            const titleEl = document.getElementById('calc-result-title');
+            const statusEl = document.getElementById('calc-status');
+            const textEl = document.getElementById('calc-text');
+            const choiceEl = document.getElementById('client-choice-analysis');
+
+            // 1. Формируем текст описания выбора пользователя (Плитки)
+            let choiceText = "Выбрано: ";
+            if (propType === 'high_apartment') choiceText += "Высотный этаж (10+), ";
+            if (propType === 'low_apartment') choiceText += "Этаж 1-9, ";
+            if (propType === 'private_house') choiceText += "Загородный дом, ";
+
+            if (density === 'dense_hub') choiceText += "высокая плотность инфраструктуры, ";
+            if (density === 'suburb_zone') choiceText += "умеренная пригородная зона, ";
+
+            if (occupancy === 'remote_leave') choiceText += "периодическое отсутствие собственника.";
+            if (occupancy === 'always_home') choiceText += "постоянное нахождение на объекте.";
+
+            choiceEl.innerText = choiceText;
+
+            // 2. Формируем текст финансового пакета (Ползунок)
+            let bodyText = "";
+
+            if (sliderPos === 0) {
+                titleEl.innerText = "Модуль: АльфаЗАЩИТА — Стандарт";
+                statusEl.innerText = "Покрытие: 800 000 ₽";
+                bodyText = "Оптимальный базовый уровень финансовой защиты вашего имущества по фиксированному тарифу 1 000 рублей в год. Включает компенсацию ущерба конструктива и отделки (800 тыс. ₽), а также заложен лимит на движимые вещи (200 тыс. ₽). Идеально подходит для квартир на средних этажах при постоянном проживании собственников.";
+            } else if (sliderPos === 1) {
+                titleEl.innerText = "Модуль: АльфаЗАЩИТА — Бизнес";
+                statusEl.innerText = "Покрытие: 1 700 000 ₽";
+                bodyText = "Сбалансированный страховой модуль стоимостью 2 000 рублей в год. Рекомендуется для индивидуальных домовладений Подмосковья и квартир в крупных жилых кварталах. Обеспечивает расширенные лимиты выплат на восстановление остекления, ремонтных работ конструктива (до 1.7 млн ₽) и порчу бытовой техники (300 тыс. ₽).";
+            } else {
+                titleEl.innerText = "Модуль: АльфаЗАЩИТА — Максимум";
+                statusEl.innerText = "Покрытие: 2 500 000 ₽";
+                bodyText = "Усиленный премиальный страховой щит стоимостью 3 000 рублей в год. Настоятельно рекомендуется алгоритмом для квартир на верхних этажах высотных ЖК Москвы и объектов вблизи стратегических узлов инфраструктуры. Лимит выплат увеличен до 2.5 млн рублей на ремонт конструктива и панорамных фасадов, и до 500 тыс. рублей на ценное движимое имущество.";
+            }
+
+            textEl.innerText = bodyText;
+
+            const scoreBox = document.querySelector('.result-score-box');
+            scoreBox.style.transform = 'scale(1.01)';
+            setTimeout(() => { scoreBox.style.transform = 'scale(1)'; }, 150);
+
+            const calcData = { propType, density, occupancy, sliderPos };
+            localStorage.setItem('uav_insurance_data', JSON.stringify(calcData));
+        }
+
+        function resetCalculator() {
+            document.querySelectorAll('input[name="property_type"]')[0].checked = true;
+            document.querySelectorAll('input[name="location_density"]')[0].checked = true;
+            document.querySelectorAll('input[name="occupancy_mode"]')[0].checked = true;
+            document.getElementById('sit_slider').value = 2;
+
+            document.querySelectorAll('.radio-tile').forEach(tile => tile.classList.remove('selected'));
+            document.querySelectorAll('input[name="property_type"]')[0].parentElement.classList.add('selected');
+            document.querySelectorAll('input[name="location_density"]')[0].parentElement.classList.add('selected');
+            document.querySelectorAll('input[name="occupancy_mode"]')[0].parentElement.classList.add('selected');
+
+            localStorage.removeItem('uav_insurance_data');
+            calculateNeckIndex(false);
+        }
+
+        function restoreCalculatorData() {
+            const saved = localStorage.getItem('uav_insurance_data');
+            if (saved) {
+                try {
+                    const data = JSON.parse(saved);
+                    document.querySelectorAll(`input[name="property_type"]`).forEach(i => { if(i.value === data.propType) i.checked = true; });
+                    document.querySelectorAll(`input[name="location_density"]`).forEach(i => { if(i.value === data.density) i.checked = true; });
+                    document.querySelectorAll(`input[name="occupancy_mode"]`).forEach(i => { if(i.value === data.occupancy) i.checked = true; });
+                    document.getElementById('sit_slider').value = data.sliderPos;
+                } catch (e) {
+                    console.log("Ошибка восстановления данных буфера");
+                }
+            }
+
+            document.querySelectorAll('.radio-tile').forEach(tile => {
+                if (tile.querySelector('input').checked) tile.classList.add('selected');
+            });
+        }
+
+        async function sharePage() {
+            const shareData = {
+                title: 'Пройди экспресс-тест уязвимости имущества и рассчитай защиту от БПЛА!',
+                text: 'Я проверила параметры безопасности своей квартиры на интерактивном калькуляторе АльфаЗАЩИТА. Узнай оптимальный тариф для своего района!',
+                url: window.location.href
+            };
+            const btnText = document.getElementById('share-btn-text');
+            if (navigator.share) {
+                try { await navigator.share(shareData); } catch (err) { console.log('Шеринг отменен'); }
+            } else {
+                try {
+                    await navigator.clipboard.writeText(window.location.href);
+                    btnText.innerText = 'Ссылка скопирована!';
+                    setTimeout(() => { btnText.innerText = 'Отправить соседям'; }, 3000);
+                } catch (err) {
+                    alert('Скопируйте адрес страницы вручную.');
+                }
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            restoreCalculatorData();
+            calculateNeckIndex(false);
+        });
+    </script>
 </body>
 </html>
